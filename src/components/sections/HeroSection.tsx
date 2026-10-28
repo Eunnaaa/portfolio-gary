@@ -53,7 +53,7 @@ export function HeroSection() {
           {/* Paragraphs */}
           <div className="space-y-4 my-auto py-6 sm:py-8">
             <p className="text-base sm:text-lg lg:text-xl font-medium tracking-tight text-text-primary leading-snug">
-              Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat dari Rekayasa Perangkat Lunak (RPL).
+              {RESUME_DATA.bio.summary}
             </p>
             <p className="text-xs sm:text-sm text-text-muted leading-relaxed font-sans">
               {RESUME_DATA.bio.subtext}

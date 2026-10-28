@@ -93,7 +93,7 @@ const jsonLd = {
       url: siteUrl,
       jobTitle: "Junior Software Engineer",
       description:
-        "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi Rekayasa Perangkat Lunak (RPL). Berfokus membangun sistem backend yang andal dan aplikasi web modern.",
+        "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat di bidang Software Development. Berfokus membangun sistem backend yang andal dan aplikasi web modern.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bekasi",
