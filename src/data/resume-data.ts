@@ -43,7 +43,7 @@ export const RESUME_DATA = {
   shortGreeting: "Gary",
   headline: "Junior Fullstack Developer & Mahasiswa Informatika",
   roleIdentifier: "fullstack-systems-engineer/",
-  location: "Jakarta, Indonesia",
+  location: "Bekasi, Indonesia",
   timezone: "UTC+7 (WIB)",
   availability: {
     status: "Open for Opportunities",
@@ -92,9 +92,9 @@ export const RESUME_DATA = {
 
   experiences: [
     {
-      role: "Pengajar Freelance (Informatika & Praktik Kejuruan RPL)",
+      role: "Pengajar Freelance",
       institution: "SMKS Bhinneka Nusantara",
-      location: "Bogor, Indonesia",
+      location: "Bekasi, Indonesia",
       period: "Feb 2025 – Jul 2026",
       badge: "Mentorship",
       description:
@@ -107,7 +107,7 @@ export const RESUME_DATA = {
       tags: ["Teaching", "Web Dev Mentoring", "Algorithms", "Software Engineering"],
     },
     {
-      role: "Backend Developer (Kompetisi PIKMI)",
+      role: "Backend Developer (Kompetisi)",
       institution: "Pusat Kreativitas Mahasiswa",
       location: "Jakarta, Indonesia",
       period: "Nov 2024 – Feb 2025",
@@ -202,6 +202,7 @@ export const RESUME_DATA = {
       category: "Programming Languages",
       skills: [
         { name: "JavaScript", level: "Advanced" },
+        { name: "Golang", level: "Advanced" },
         { name: "PHP", level: "Proficient" },
         { name: "Python", level: "Intermediate" },
         { name: "Java", level: "Intermediate" },
@@ -212,9 +213,12 @@ export const RESUME_DATA = {
       category: "Frameworks & Libraries",
       skills: [
         { name: "React", level: "Proficient" },
-        { name: "Next.js (App Router)", level: "Proficient" },
+        { name: "React Native", level: "Proficient" },
+        { name: "Next.js", level: "Proficient" },
         { name: "Laravel", level: "Proficient" },
         { name: "Vue.js", level: "Intermediate" },
+        { name: "Express.js", level: "Proficient" },
+        { name: "Elysia.js", level: "Proficient" },
         { name: "Flask", level: "Intermediate" },
         { name: "Spring Boot", level: "Foundational" },
         { name: "Flutter", level: "Intermediate" },
@@ -224,7 +228,7 @@ export const RESUME_DATA = {
     {
       category: "Databases & Architecture",
       skills: [
-        { name: "MySQL / Relational DB", level: "Proficient" },
+        { name: "MySQL / PostgreSQL", level: "Proficient" },
         { name: "RESTful API Design", level: "Advanced" },
         { name: "Server-Side Architecture", level: "Proficient" },
         { name: "Git & GitHub Workflow", level: "Advanced" },
@@ -233,11 +237,10 @@ export const RESUME_DATA = {
     {
       category: "Design, Content & Tools",
       skills: [
-        { name: "Canva Pro", level: "Advanced" },
-        { name: "CapCut Video Editing", level: "Proficient" },
-        { name: "Technical Copywriting", level: "Proficient" },
+        { name: "Canva", level: "Advanced" },
+        { name: "CapCut ", level: "Proficient" },
+        { name: "Copywriting", level: "Proficient" },
         { name: "Content Research", level: "Advanced" },
-        { name: "VS Code & CLI Tools", level: "Advanced" },
       ],
     },
   ] as SkillCategory[],

@@ -20,7 +20,7 @@ export function HeroSection() {
         <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-grid-border">
           {/* Top Metadata */}
           <div className="text-xs font-mono text-text-muted">
-            October 2026 / Jakarta, ID
+            October 2026 / {RESUME_DATA.location}
           </div>
 
           {/* Main Hero Slogan */}

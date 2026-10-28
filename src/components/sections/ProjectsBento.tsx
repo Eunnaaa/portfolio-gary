@@ -41,9 +41,9 @@ export function ProjectsBento() {
 
             {/* Footer: Simple Tech & Link */}
             <div className="pt-6 border-t border-grid-border space-y-3">
-              <div className="text-xs font-mono text-text-muted">
+              <div className="text-xs font-mono text-text-muted leading-relaxed">
                 <span className="text-text-primary font-medium">Stack: </span>
-                {project.tags.slice(0, 4).join(", ")}
+                {project.tags.join(" • ")}
               </div>
 
               <div>
