@@ -293,7 +293,7 @@ export const RESUME_DATA = {
       ],
     },
     {
-      category: "Design, Content & Tools",
+      category: "Softskills & etc",
       skills: [
         { name: "Canva", level: "Advanced" },
         { name: "CapCut ", level: "Proficient" },
