@@ -12,16 +12,14 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-canvas/95 backdrop-blur-sm border-b border-grid-border">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
-          {/* Brand */}
           <Link
             href="/"
             className="text-sm font-mono font-medium text-text-primary hover:text-accent-green transition-colors"
           >
             <span className="text-accent-green font-bold mr-1.5">/</span>
-            <span>gary-hardyansyah</span>
+            <span>Gary Hardyansyah</span>
           </Link>
 
-          {/* Nav links (Desktop) */}
           <nav className="hidden md:flex items-center gap-7 text-xs font-mono">
             <Link
               href="#about"
@@ -55,7 +53,6 @@ export function Navbar() {
             </Link>
           </nav>
 
-          {/* Right Action (Desktop) */}
           <div className="hidden md:flex items-center gap-3">
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
@@ -67,7 +64,6 @@ export function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-1.5 rounded text-text-muted hover:text-text-primary border border-grid-border bg-surface"
@@ -78,7 +74,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-grid-border bg-canvas px-6 py-4 space-y-3 font-mono text-xs">
           <Link

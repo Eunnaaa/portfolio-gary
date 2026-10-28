@@ -60,7 +60,7 @@ export const RESUME_DATA = {
   },
   bio: {
     summary:
-      "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat dari Rekayasa Perangkat Lunak (RPL). Memiliki keahlian terintegrasi mulai dari perancangan arsitektur server-side & RESTful API hingga antarmuka web modern dengan Next.js & Laravel.",
+      "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat dalam pengembangan Aplikasi dan Website. Memiliki keahlian terintegrasi mulai dari perancangan arsitektur server-side & RESTful API hingga antarmuka web modern dengan Next.js & Laravel.",
     subtext:
       "Berpengalaman nyata sebagai instruktur teknis coding di SMK kejuruan dan Backend Developer pada kompetisi nasional. Disiplin, komunikatif, dan berdedikasi membangun perangkat lunak yang andal.",
   },
