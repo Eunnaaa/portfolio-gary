@@ -34,7 +34,7 @@ export function ProjectsBento() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 40vw"
                       priority={idx === 0}
-                      className="object-cover object-top"
+                      className="object-cover object-top grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
                     />
                   </div>
                 ) : (
@@ -44,7 +44,7 @@ export function ProjectsBento() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     priority={idx === 0}
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover object-top group-hover:scale-105 grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
                   />
                 )}
               </div>
