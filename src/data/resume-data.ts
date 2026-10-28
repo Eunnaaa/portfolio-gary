@@ -62,14 +62,14 @@ export const RESUME_DATA = {
     summary:
       "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat dari Rekayasa Perangkat Lunak (RPL).",
     subtext:
-      "Sebagai Junior Software Engineer, saya fokus membangun aplikasi web dan sistem backend yang andal, efisien, serta mudah dikembangkan. Berdedikasi memecahkan masalah nyata melalui penerapan praktik software engineering modern.",
+      "Sebagai Junior Software Engineer, saya fokus membangun aplikasi, web dan sistem yang andal, efisien, serta mudah dikembangkan. Memecahkan masalah nyata melalui penerapan praktik software engineering modern.",
   },
 
   metrics: [
     {
       number: "3+",
       unit: "Years",
-      label: "RPL & Code Foundation",
+      label: "Code Foundation",
       sublabel: "Sejak SMK RPL (2021) hingga S1",
       progressPercent: 75,
     },

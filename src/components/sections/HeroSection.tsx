@@ -1,18 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import { RESUME_DATA } from "@/data/resume-data";
-import { Download, ArrowRight, Check, Copy } from "lucide-react";
+import { Download, ArrowRight } from "lucide-react";
 
 export function HeroSection() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(RESUME_DATA.contact.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <section id="about" className="border-b border-grid-border">
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[400px]">
@@ -62,7 +52,7 @@ export function HeroSection() {
           </div>
 
           {/* Paragraphs */}
-          <div className="space-y-3 sm:space-y-4 my-auto py-5 sm:py-6">
+          <div className="space-y-4 my-auto py-6 sm:py-8">
             <p className="text-base sm:text-lg lg:text-xl font-medium tracking-tight text-text-primary leading-snug">
               Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat dari Rekayasa Perangkat Lunak (RPL).
             </p>
@@ -71,24 +61,8 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Clean Direct Email */}
-          <div className="pt-4 sm:pt-6 border-t border-grid-border flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-            <span className="text-text-muted">Email:</span>
-            <button
-              onClick={handleCopyEmail}
-              className="flex items-center gap-1.5 text-text-primary hover:text-accent-green transition-colors max-w-full"
-              title="Klik untuk menyalin email"
-            >
-              <span className="underline underline-offset-4 decoration-grid-border truncate">
-                {RESUME_DATA.contact.email}
-              </span>
-              {copied ? (
-                <Check className="w-3.5 h-3.5 text-accent-green shrink-0" />
-              ) : (
-                <Copy className="w-3 h-3 text-text-muted shrink-0" />
-              )}
-            </button>
-          </div>
+          {/* Empty spacer to balance bottom border alignment with left column */}
+          <div className="hidden lg:block h-8" />
         </div>
       </div>
     </section>
