@@ -17,7 +17,7 @@ export function HeroSection() {
           {/* Main Hero Slogan */}
           <div className="my-6 sm:my-10 lg:my-12">
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-text-primary">
-              hi-<span className="text-accent-green">{RESUME_DATA.shortGreeting}</span>
+              {RESUME_DATA.name}
             </h1>
             <RoleRotator />
           </div>
