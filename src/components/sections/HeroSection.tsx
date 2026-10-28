@@ -29,7 +29,7 @@ export function HeroSection() {
               hi-<span className="text-accent-green">{RESUME_DATA.shortGreeting}</span>
             </h1>
             <p className="mt-2 sm:mt-3 text-base sm:text-lg font-mono text-text-muted">
-              junior-fullstack-developer<span className="text-accent-green">/</span>
+              junior-software-engineer<span className="text-accent-green">/</span>
             </p>
           </div>
 
@@ -67,7 +67,7 @@ export function HeroSection() {
               Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat dari Rekayasa Perangkat Lunak (RPL).
             </p>
             <p className="text-xs sm:text-sm text-text-muted leading-relaxed font-sans">
-              Fokus merancang arsitektur server-side yang andal, RESTful API, dan web modern dengan Next.js & Laravel. Berpengalaman sebagai instruktur coding di SMK dan backend developer kompetisi nasional.
+              {RESUME_DATA.bio.subtext}
             </p>
           </div>
 

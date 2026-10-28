@@ -30,7 +30,7 @@ export function ContactFooter() {
               get-in-touch<span className="text-accent-green">/</span>
             </h2>
             <p className="mt-3 text-sm sm:text-base text-text-muted leading-relaxed font-sans max-w-lg">
-              Terbuka untuk peluang magang, posisi fullstack developer, dan pengerjaan proyek sistem web.
+              Terbuka untuk peluang magang, posisi Junior Software Engineer, dan pengerjaan proyek sistem web.
             </p>
           </div>
 

@@ -40,7 +40,7 @@ export interface SkillCategory {
 
 export const RESUME_DATA = {
   name: "Gary Hardyansyah",
-  shortGreeting: "Gary",
+  shortGreeting: "Gary Hardyansyah",
   headline: "Junior Fullstack Developer & Mahasiswa Informatika",
   roleIdentifier: "fullstack-systems-engineer/",
   location: "Bekasi, Indonesia",
@@ -65,7 +65,6 @@ export const RESUME_DATA = {
       "Berpengalaman nyata sebagai instruktur teknis coding di SMK kejuruan dan Backend Developer pada kompetisi nasional. Disiplin, komunikatif, dan berdedikasi membangun perangkat lunak yang andal.",
   },
 
-  // 3 Circular Metrics inspired by the GitHub Universe countdown gauges
   metrics: [
     {
       number: "3+",
@@ -203,6 +202,7 @@ export const RESUME_DATA = {
       skills: [
         { name: "JavaScript", level: "Advanced" },
         { name: "Golang", level: "Advanced" },
+        { name: "Dart", level: "Advance" },
         { name: "PHP", level: "Proficient" },
         { name: "Python", level: "Intermediate" },
         { name: "Java", level: "Intermediate" },
@@ -249,7 +249,7 @@ export const RESUME_DATA = {
     {
       degree: "S1 Informatika",
       institution: "Universitas Nusa Mandiri",
-      period: "2024 – 2028 (Perkiraan Lulus)",
+      period: "2024 – 2028",
       status: "Mahasiswa Aktif (Semester 5)",
       notes: "Fakultas Teknologi Informasi, fokus pada rekayasa perangkat lunak dan arsitektur sistem.",
     },
