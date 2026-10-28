@@ -25,6 +25,7 @@ export interface ProjectItem {
   statusType: "live" | "competition" | "internal";
   image?: string;
   imageType?: "landscape" | "portrait";
+  gallery?: string[];
   description: string;
   architecturePoints: string[];
   tags: string[];
@@ -209,6 +210,11 @@ export const RESUME_DATA = {
       statusType: "live",
       image: "/projects/eventku.png",
       imageType: "portrait",
+      gallery: [
+        "/projects/uangku2.png",
+        "/projects/eventku.png",
+        "/projects/uangku3.png",
+      ],
       description:
         "Aplikasi pemesanan dan manajemen event berbasis Flutter dan Google Firebase yang memungkinkan pengguna menemukan berbagai seminar edukasi, memesan tiket instan ber-QR code, serta mengawasi data kehadiran peserta secara real-time.",
       architecturePoints: [

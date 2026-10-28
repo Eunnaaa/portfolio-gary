@@ -27,16 +27,54 @@ export function ProjectsBento() {
             <div className="lg:col-span-5 flex items-center">
               <div className="relative w-full aspect-[16/10] rounded border border-grid-border overflow-hidden bg-surface flex items-center justify-center">
                 {project.imageType === "portrait" ? (
-                  <div className="relative h-[90%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500">
-                    <Image
-                      src={project.image!}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                      priority={idx === 0}
-                      className="object-cover object-top grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
-                    />
-                  </div>
+                  project.gallery && project.gallery.length >= 3 ? (
+                    <div className="relative w-full h-full flex items-center justify-center gap-1.5 sm:gap-2.5 px-2 sm:px-3">
+                      {/* Left Screen */}
+                      <div className="relative h-[80%] sm:h-[82%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500 shrink-0">
+                        <Image
+                          src={project.gallery[0]}
+                          alt={`${project.title} screenshot left`}
+                          fill
+                          sizes="(max-width: 1024px) 30vw, 12vw"
+                          className="object-cover object-top grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
+                        />
+                      </div>
+
+                      {/* Center Screen (Primary/Featured) */}
+                      <div className="relative h-[90%] sm:h-[92%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-md group-hover:scale-105 transition-transform duration-500 z-10 shrink-0">
+                        <Image
+                          src={project.gallery[1]}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 1024px) 35vw, 15vw"
+                          priority={idx === 0}
+                          className="object-cover object-top grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
+                        />
+                      </div>
+
+                      {/* Right Screen */}
+                      <div className="relative h-[80%] sm:h-[82%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500 shrink-0">
+                        <Image
+                          src={project.gallery[2]}
+                          alt={`${project.title} screenshot right`}
+                          fill
+                          sizes="(max-width: 1024px) 30vw, 12vw"
+                          className="object-cover object-top grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="relative h-[90%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500">
+                      <Image
+                        src={project.image!}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 40vw"
+                        priority={idx === 0}
+                        className="object-cover object-top grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
+                      />
+                    </div>
+                  )
                 ) : (
                   <Image
                     src={project.image!}
