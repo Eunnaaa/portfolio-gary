@@ -1,0 +1,41 @@
+eventku
+
+EventKu adalah aplikasi pemesanan dan manajemen event berbasis Flutter dan
+  Google Firebase yang memungkinkan pengguna menemukan berbagai seminar
+  edukasi, memesan tiket instan ber-QR code, serta mengelola daftar acara
+  favorit, sembari memberikan kontrol penuh bagi administrator untuk
+  mempublikasikan kegiatan, memantau ketersediaan kuota kursi, dan mengawasi
+  data kehadiran peserta secara terpadu real-time.
+
+uang-ku
+
+UangKu adalah aplikasi pencatatan keuangan personal iOS mewah dan elegan untuk mencatat pengeluaran, pemasukan, transfer saldo, serta
+  pemantauan anggaran harian secara cepat dan aman, yang dibangun menggunakan arsitektur modern berbasis React Native, Expo, SQLite lokal,
+  TypeScript, Bun, ElysiaJS, PostgreSQL, serta Drizzle ORM dengan kapabilitas sinkronisasi data luring yang sangat andal.
+
+padelhub
+
+PadelHub adalah platform reservasi lapangan padel digital yang
+  memfasilitasi para pengguna untuk mencari serta memesan jadwal bermain
+  secara langsung dan mempermudah pihak pengelola venue mengurus operasional
+  bisnis harian dengan memanfaatkan tumpukan teknologi modern mencakup
+  framework Laravel, antarmuka interaktif Vue, penghubung Inertia, penataan
+  Tailwind CSS, serta sistem manajemen basis data PostgreSQL.
+
+kedai-ku
+
+ Kedai-Ku adalah platform Point of Sale multi-tenant modern yang dirancang
+  untuk mengelola seluruh transaksi kasir, manajemen inventaris, operasional
+  dapur, CRM loyalitas, dan pembukuan keuangan bisnis ritel serta F&B secara
+  offline maupun online menggunakan Next.js 15, React 19, TypeScript,
+  Tailwind CSS, shadcn UI, Drizzle ORM, database PostgreSQL Supabase, dan
+  Better Auth.
+
+bank-sampah
+
+Platform Si Bank Sampah merupakan sistem web operasional lingkungan rukun
+  warga untuk memfasilitasi pencatatan setoran timbangan petugas lapangan,
+  pemeriksaan saldo mandiri warga, manajemen katalog harga komoditas, dan
+  rekapitulasi laporan bulanan yang dibangun menggunakan tumpukan teknologi
+  modern TanStack Start, React, TypeScript, Drizzle ORM, Vite, serta basis
+  data PostgreSQL Supabase secara terintegrasi.

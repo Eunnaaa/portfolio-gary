@@ -23,6 +23,8 @@ export interface ProjectItem {
   category: string;
   status: string;
   statusType: "live" | "competition" | "internal";
+  image?: string;
+  imageType?: "landscape" | "portrait";
   description: string;
   architecturePoints: string[];
   tags: string[];
@@ -140,59 +142,103 @@ export const RESUME_DATA = {
 
   projects: [
     {
-      id: "pikmi-backend",
-      title: "PIKMI Core Server & API Engine",
-      category: "Backend Architecture",
-      status: "Competition Finalist",
-      statusType: "competition",
+      id: "kedai-ku",
+      title: "Kedai-Ku (Point of Sale & CRM)",
+      category: "Multi-Tenant SaaS / F&B POS",
+      status: "Production Ready",
+      statusType: "live",
+      image: "/projects/kedai-ku.png",
+      imageType: "landscape",
       description:
-        "Infrastruktur backend dan layanan data terpusat yang dirancang untuk platform kompetisi mahasiswa nasional, berfokus pada kecepatan response dan keamanan API.",
+        "Platform Point of Sale multi-tenant modern yang dirancang untuk mengelola seluruh transaksi kasir, manajemen inventaris, operasional dapur, CRM loyalitas, dan pembukuan keuangan bisnis ritel serta F&B secara offline maupun online.",
       architecturePoints: [
-        "Desain REST API standar industri dengan enkripsi token autentikasi.",
-        "Optimasi query database relasional untuk respon request di bawah 100ms.",
-        "Dokumentasi API terstruktur untuk integrasi mulus dengan tim frontend.",
+        "Arsitektur modern Next.js 15, React 19, TypeScript, dan shadcn UI",
+        "Type-safe data layer dengan Drizzle ORM dan PostgreSQL Supabase",
+        "Sistem otentikasi multi-tenant terisolasi berbasis Better Auth",
       ],
-      tags: ["PHP/Laravel", "REST API", "Database Design", "Postman", "Git"],
+      tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Drizzle ORM", "Supabase", "Better Auth"],
       links: [
-        { label: "architecture/", href: "#", type: "docs" },
-        { label: "repository/", href: "#", type: "github" },
+        { label: "project-details/", href: "#contact", type: "docs" },
       ],
     },
     {
-      id: "rpl-learning-lab",
-      title: "RPL Vocational Practical Modules",
-      category: "Education & Tooling",
-      status: "Active Production",
+      id: "padelhub",
+      title: "PadelHub (Court Reservation Platform)",
+      category: "Sports Booking & Venue ERP",
+      status: "Production Ready",
       statusType: "live",
+      image: "/projects/padelhub.png",
+      imageType: "landscape",
       description:
-        "Kompilasi kurikulum modul praktikum interaktif dan sistem latihan pemrograman berbasis proyek nyata yang digunakan oleh siswa kelas 11 Rekayasa Perangkat Lunak.",
+        "Platform reservasi lapangan padel digital yang memfasilitasi para pengguna untuk mencari serta memesan jadwal bermain secara langsung dan mempermudah pihak pengelola venue mengurus operasional bisnis harian.",
       architecturePoints: [
-        "Materi terstruktur dari HTML/CSS modern, JavaScript DOM, hingga pengantar backend.",
-        "Studi kasus pembuatan aplikasi web mini dari nol sampai siap publish.",
-        "Panduan debugging dan clean-code best practices untuk siswa pemula.",
+        "Integrasi monolitik modern Laravel dengan antarmuka interaktif Vue via Inertia.js",
+        "Sistem penjadwalan dan reservasi real-time terstruktur",
+        "Manajemen basis data relasional PostgreSQL dengan penataan Tailwind CSS",
       ],
-      tags: ["Informatika", "Curriculum Design", "HTML/CSS/JS", "Mentoring"],
+      tags: ["Laravel", "Vue.js", "Inertia.js", "Tailwind CSS", "PostgreSQL"],
       links: [
-        { label: "modules/", href: "#", type: "docs" },
+        { label: "project-details/", href: "#contact", type: "docs" },
       ],
     },
     {
-      id: "neo-fullstack-starter",
-      title: "Next.js & Spring/Laravel Enterprise Stack",
-      category: "Fullstack Exploration",
-      status: "Open Source",
+      id: "bank-sampah",
+      title: "Si Bank Sampah (Community Waste ERP)",
+      category: "Environmental ERP & Community Web",
+      status: "Active Deployment",
       statusType: "live",
+      image: "/projects/sibank-sampah.png",
+      imageType: "landscape",
       description:
-        "Arsitektur referensi modern yang menggabungkan Next.js App Router pada sisi frontend dengan backend modular bertenaga Spring Boot / Laravel.",
+        "Platform sistem web operasional lingkungan rukun warga untuk memfasilitasi pencatatan setoran timbangan petugas lapangan, pemeriksaan saldo mandiri warga, manajemen katalog harga komoditas, dan rekapitulasi laporan bulanan.",
       architecturePoints: [
-        "Server-Side Rendering (SSR) & Server Components untuk performa SEO maksimal.",
-        "Type-safe API contract antara client dan backend endpoint.",
-        "Sistem desain modular Bento Grid dengan Tailwind CSS.",
+        "Tumpukan teknologi modern TanStack Start, React, dan TypeScript berbasis Vite",
+        "Drizzle ORM untuk query data setoran dan saldo warga secara type-safe",
+        "Penyimpanan cloud terintegrasi dengan PostgreSQL Supabase",
       ],
-      tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Spring Boot", "Laravel", "Go" ],
+      tags: ["TanStack Start", "React", "TypeScript", "Drizzle ORM", "Vite", "Supabase"],
       links: [
-        { label: "source/", href: "#", type: "github" },
-        { label: "demo/", href: "#", type: "live" },
+        { label: "project-details/", href: "#contact", type: "docs" },
+      ],
+    },
+    {
+      id: "eventku",
+      title: "EventKu (Event Booking & QR Ticket)",
+      category: "Mobile App & Event Ticketing",
+      status: "Production Ready",
+      statusType: "live",
+      image: "/projects/eventku.png",
+      imageType: "portrait",
+      description:
+        "Aplikasi pemesanan dan manajemen event berbasis Flutter dan Google Firebase yang memungkinkan pengguna menemukan berbagai seminar edukasi, memesan tiket instan ber-QR code, serta mengawasi data kehadiran peserta secara real-time.",
+      architecturePoints: [
+        "Aplikasi cross-platform dibangun dengan Flutter dan bahasa Dart",
+        "Backend real-time serverless bertenaga Google Firebase & Auth",
+        "Sistem validasi tiket instan ber-QR code terintegrasi",
+      ],
+      tags: ["Flutter", "Dart", "Google Firebase", "QR Code Scanner", "Mobile"],
+      links: [
+        { label: "project-details/", href: "#contact", type: "docs" },
+      ],
+    },
+    {
+      id: "uang-ku",
+      title: "UangKu (Personal Finance & Offline Sync)",
+      category: "iOS Mobile App & Offline-First",
+      status: "Production Ready",
+      statusType: "live",
+      image: "/projects/uang-ku.png",
+      imageType: "portrait",
+      description:
+        "Aplikasi pencatatan keuangan personal iOS mewah dan elegan untuk mencatat pengeluaran, pemasukan, transfer saldo, serta pemantauan anggaran harian secara cepat dan aman dengan kapabilitas sinkronisasi data luring yang andal.",
+      architecturePoints: [
+        "Mobile client dibangun dengan React Native, Expo, dan SQLite lokal",
+        "Backend performa tinggi dengan Bun, ElysiaJS, PostgreSQL, dan Drizzle ORM",
+        "Mekanisme sinkronisasi data luring (offline-first) yang mulus dan cepat",
+      ],
+      tags: ["React Native", "Expo", "SQLite Lokal", "TypeScript", "Bun", "ElysiaJS", "Drizzle ORM"],
+      links: [
+        { label: "project-details/", href: "#contact", type: "docs" },
       ],
     },
   ] as ProjectItem[],
