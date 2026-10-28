@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ArrowUpRight } from "lucide-react";
 
@@ -25,12 +26,16 @@ export function ProjectsBento() {
           >
             {/* Left Column: Visual Preview (5 cols on lg) */}
             <div className="lg:col-span-5 flex items-center">
-              <div className="relative w-full aspect-[16/10] rounded border border-grid-border overflow-hidden bg-surface flex items-center justify-center">
+              <Link
+                href={`/projects/${project.id}`}
+                aria-label={`Buka halaman detail project ${project.title}`}
+                className="relative w-full aspect-[16/10] rounded-xl border border-grid-border overflow-hidden bg-surface flex items-center justify-center cursor-pointer block"
+              >
                 {project.imageType === "portrait" ? (
                   project.gallery && project.gallery.length >= 3 ? (
                     <div className="relative w-full h-full flex items-center justify-center gap-1.5 sm:gap-2.5 px-2 sm:px-3">
                       {/* Left Screen */}
-                      <div className="relative h-[80%] sm:h-[82%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500 shrink-0">
+                      <div className="relative h-[80%] sm:h-[82%] aspect-[9/18.5] rounded-[18px] overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500 shrink-0">
                         <Image
                           src={project.gallery[0]}
                           alt={`${project.title} screenshot left`}
@@ -41,7 +46,7 @@ export function ProjectsBento() {
                       </div>
 
                       {/* Center Screen (Primary/Featured) */}
-                      <div className="relative h-[90%] sm:h-[92%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-md group-hover:scale-105 transition-transform duration-500 z-10 shrink-0">
+                      <div className="relative h-[90%] sm:h-[92%] aspect-[9/18.5] rounded-[20px] overflow-hidden border border-grid-border shadow-md group-hover:scale-105 transition-transform duration-500 z-10 shrink-0">
                         <Image
                           src={project.gallery[1]}
                           alt={project.title}
@@ -53,7 +58,7 @@ export function ProjectsBento() {
                       </div>
 
                       {/* Right Screen */}
-                      <div className="relative h-[80%] sm:h-[82%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500 shrink-0">
+                      <div className="relative h-[80%] sm:h-[82%] aspect-[9/18.5] rounded-[18px] overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500 shrink-0">
                         <Image
                           src={project.gallery[2]}
                           alt={`${project.title} screenshot right`}
@@ -64,7 +69,7 @@ export function ProjectsBento() {
                       </div>
                     </div>
                   ) : (
-                    <div className="relative h-[90%] aspect-[9/18.5] rounded-md overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500">
+                    <div className="relative h-[90%] aspect-[9/18.5] rounded-[20px] overflow-hidden border border-grid-border shadow-sm group-hover:scale-105 transition-transform duration-500">
                       <Image
                         src={project.image!}
                         alt={project.title}
@@ -85,7 +90,7 @@ export function ProjectsBento() {
                     className="object-cover object-top group-hover:scale-105 grayscale contrast-[0.95] opacity-80 dark:opacity-75 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-500 ease-out"
                   />
                 )}
-              </div>
+              </Link>
             </div>
 
             {/* Right Column: Project Context & Details (7 cols on lg) */}
@@ -102,9 +107,14 @@ export function ProjectsBento() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight mb-2.5">
-                  {project.title}
-                </h3>
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="group/title inline-block"
+                >
+                  <h3 className="text-xl sm:text-2xl font-bold text-text-primary group-hover/title:text-accent-green tracking-tight mb-2.5 transition-colors">
+                    {project.title}
+                  </h3>
+                </Link>
 
                 {/* Description */}
                 <p className="text-xs sm:text-sm text-text-muted leading-relaxed font-sans mb-4">
@@ -134,13 +144,13 @@ export function ProjectsBento() {
                   {project.tags.join(" • ")}
                 </div>
 
-                <a
-                  href="#contact"
+                <Link
+                  href={`/projects/${project.id}`}
                   className="inline-flex items-center gap-1 font-semibold text-text-primary hover:text-accent-green transition-colors cursor-pointer shrink-0"
                 >
                   <span>project-details/</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

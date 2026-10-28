@@ -1,8 +1,18 @@
 import { MetadataRoute } from "next";
+import { RESUME_DATA } from "@/data/resume-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://garyhardyansyah.vercel.app";
+
+  const projectRoutes: MetadataRoute.Sitemap = RESUME_DATA.projects.map(
+    (project) => ({
+      url: `${siteUrl}/projects/${project.id}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    })
+  );
 
   return [
     {
@@ -11,5 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1.0,
     },
+    ...projectRoutes,
   ];
 }
