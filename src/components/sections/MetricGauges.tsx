@@ -25,13 +25,14 @@ export function MetricGauges() {
       {/* 3 Circular Gauges Container */}
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid-border py-8 sm:py-12 px-4 max-w-6xl mx-auto">
         {RESUME_DATA.metrics.map((metric, idx) => (
-          <div key={idx} className="flex justify-center items-center py-4 md:py-0">
+          <div key={idx} className="flex justify-center items-center py-6 md:py-2">
             <GaugeCircle
-              value={metric.value}
+              number={metric.number}
+              unit={metric.unit}
               label={metric.label}
               sublabel={metric.sublabel}
               progressPercent={metric.progressPercent}
-              size={155}
+              size={168}
               strokeWidth={7}
             />
           </div>

@@ -4,7 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface GaugeCircleProps {
-  value: string;
+  number: string;
+  unit: string;
   label: string;
   sublabel?: string;
   progressPercent: number; // 0 to 100
@@ -13,22 +14,23 @@ interface GaugeCircleProps {
 }
 
 export function GaugeCircle({
-  value,
+  number,
+  unit,
   label,
   sublabel,
   progressPercent = 75,
-  size = 150,
-  strokeWidth = 6.5,
+  size = 168,
+  strokeWidth = 7,
 }: GaugeCircleProps) {
   const radius = (size - strokeWidth * 2) / 2;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (progressPercent / 100) * circumference;
 
   return (
-    <div className="flex flex-col items-center text-center p-4">
+    <div className="flex flex-col items-center text-center p-4 w-full max-w-[260px] mx-auto">
       {/* Circle Container */}
       <div
-        className="relative flex items-center justify-center rounded-full bg-surface transition-transform duration-300 hover:scale-105"
+        className="relative flex items-center justify-center rounded-full bg-surface transition-transform duration-300 hover:scale-105 shadow-sm"
         style={{ width: size, height: size }}
       >
         <svg
@@ -62,21 +64,24 @@ export function GaugeCircle({
           />
         </svg>
 
-        {/* Centered Value */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-2xl md:text-3xl font-bold font-sans tracking-tight text-accent-green">
-            {value}
+        {/* Centered Structured Value (Hero Number + Clean Unit) */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none">
+          <span className="text-3xl sm:text-4xl font-extrabold font-sans tracking-tight text-accent-green leading-none">
+            {number}
+          </span>
+          <span className="text-xs sm:text-sm font-mono font-bold tracking-wider text-text-primary uppercase mt-1.5">
+            {unit}
           </span>
         </div>
       </div>
 
-      {/* Text Labels */}
-      <div className="mt-3.5 max-w-[170px]">
-        <h4 className="text-sm font-semibold text-text-primary tracking-tight">
+      {/* Text Labels below */}
+      <div className="mt-4 min-h-[60px] flex flex-col justify-start">
+        <h4 className="text-sm sm:text-base font-semibold text-text-primary tracking-tight">
           {label}
         </h4>
         {sublabel && (
-          <p className="text-xs text-text-muted font-mono mt-0.5 leading-relaxed">
+          <p className="text-xs text-text-muted font-mono mt-1 leading-relaxed max-w-[200px] mx-auto">
             {sublabel}
           </p>
         )}

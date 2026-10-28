@@ -1,5 +1,6 @@
 export interface MetricItem {
-  value: string;
+  number: string;
+  unit: string;
   label: string;
   sublabel: string;
   progressPercent: number; // For SVG gauge arc
@@ -67,19 +68,22 @@ export const RESUME_DATA = {
   // 3 Circular Metrics inspired by the GitHub Universe countdown gauges
   metrics: [
     {
-      value: "3+ Yrs",
+      number: "3+",
+      unit: "Years",
       label: "RPL & Code Foundation",
       sublabel: "Sejak SMK RPL (2021) hingga S1",
       progressPercent: 75,
     },
     {
-      value: "7+ Stacks",
+      number: "7+",
+      unit: "Stacks",
       label: "Frameworks & Libraries",
       sublabel: "Laravel, React, Next, Flask, etc.",
       progressPercent: 88,
     },
     {
-      value: "100+ Siswa",
+      number: "100+",
+      unit: "Siswa",
       label: "Bimbingan & Mentorship",
       sublabel: "Praktik Kejuruan Siswa RPL",
       progressPercent: 92,
