@@ -15,6 +15,16 @@ export function ContactFooter() {
 
   return (
     <footer id="contact" className="bg-canvas">
+      {/* Section Header */}
+      <div className="px-6 sm:px-10 py-4 sm:py-5 border-b border-grid-border flex items-center justify-between">
+        <h2 className="text-xs sm:text-sm font-mono font-bold text-text-primary uppercase tracking-wider">
+          contact
+        </h2>
+        <span className="text-[11px] sm:text-xs font-mono text-text-muted">
+          inquiries & collaboration
+        </span>
+      </div>
+
       {/* 2-Column Grid (Mirrors section#about 7:5 ratio exactly) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[400px] border-b border-grid-border">
         {/* Left Column: 7 cols on lg */}
