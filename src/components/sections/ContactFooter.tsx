@@ -130,6 +130,16 @@ export function ContactFooter() {
             </a>
 
             <a
+              href={RESUME_DATA.contact.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-primary hover:text-accent-green transition-colors inline-flex items-center gap-1"
+            >
+              <span>instagram/</span>
+              <ArrowUpRight className="w-3 h-3 text-accent-green" />
+            </a>
+
+            <a
               href={RESUME_DATA.contact.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"

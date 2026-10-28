@@ -54,13 +54,14 @@ export const RESUME_DATA = {
     email: "garryhardyansyah23@gmail.com",
     phone: "0857-2152-9781",
     whatsappUrl: "https://wa.me/6285721529781?text=Halo%20Gary,%20saya%20tertarik%20dengan%20portfolio%20Anda",
-    githubUrl: "https://github.com",
-    linkedinUrl: "https://linkedin.com",
+    githubUrl: "https://github.com/Eunnaaa",
+    instagramUrl: "https://www.instagram.com/garyhrdynsyh/",
+    linkedinUrl: "https://www.linkedin.com/in/garyhardyansyah/",
     cvDownloadUrl: "/CV_Gary_Hardyansyah.pdf",
   },
   bio: {
     summary:
-      "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat dari Rekayasa Perangkat Lunak (RPL).",
+      "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi kuat di bidang Software Development",
     subtext:
       "Sebagai Junior Software Engineer, saya fokus membangun aplikasi, web dan sistem yang andal, efisien, serta mudah dikembangkan. Memecahkan masalah nyata melalui penerapan praktik software engineering modern.",
   },
