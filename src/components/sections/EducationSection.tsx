@@ -7,7 +7,7 @@ export function EducationSection() {
       {/* Section Header */}
       <div className="px-6 sm:px-10 py-4 sm:py-5 border-b border-grid-border flex items-center justify-between">
         <h2 className="text-xs sm:text-sm font-mono font-bold text-text-primary uppercase tracking-wider">
-          education/
+          education
         </h2>
         <span className="text-[11px] sm:text-xs font-mono text-text-muted">
           academic & vocational
