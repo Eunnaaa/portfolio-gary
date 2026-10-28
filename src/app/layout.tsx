@@ -34,7 +34,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#EAEDEC",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#EAEDEC" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E110F" },
+  ],
 };
 
 export default function RootLayout({
@@ -43,7 +46,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${sansFont.variable} ${monoFont.variable}`}>
+    <html
+      lang="id"
+      suppressHydrationWarning
+      className={`${sansFont.variable} ${monoFont.variable}`}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (stored === 'dark' || (!stored && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-canvas text-text-primary antialiased font-sans selection:bg-accent-green selection:text-white">
         {children}
       </body>

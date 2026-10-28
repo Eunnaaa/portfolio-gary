@@ -39,8 +39,9 @@ export function GaugeCircle({
             cy={size / 2}
             r={radius}
             fill="transparent"
-            stroke="#DCE3DE"
+            stroke="currentColor"
             strokeWidth={strokeWidth}
+            className="text-grid-border"
           />
           {/* Animated Progress Arc */}
           <motion.circle
@@ -48,13 +49,14 @@ export function GaugeCircle({
             cy={size / 2}
             r={radius}
             fill="transparent"
-            stroke="#3D7D3F"
+            stroke="currentColor"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             initial={{ strokeDashoffset: circumference }}
             animate={{ strokeDashoffset }}
             transition={{ duration: 1.4, ease: "easeOut" }}
             strokeLinecap="round"
+            className="text-accent-green"
           />
         </svg>
 

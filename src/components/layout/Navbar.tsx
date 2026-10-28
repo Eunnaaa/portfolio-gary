@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { RESUME_DATA } from "@/data/resume-data";
 import { Download, Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,7 +54,8 @@ export function Navbar() {
             </Link>
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2.5">
+            <ThemeToggle />
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
               download="CV_Gary_Hardyansyah.pdf"
@@ -64,13 +66,16 @@ export function Navbar() {
             </a>
           </div>
 
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 rounded text-text-muted hover:text-text-primary border border-grid-border bg-surface"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-1.5 rounded text-text-muted hover:text-text-primary border border-grid-border bg-surface"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
       </div>
 

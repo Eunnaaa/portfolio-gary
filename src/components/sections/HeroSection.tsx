@@ -26,7 +26,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded text-xs font-mono font-medium bg-text-primary hover:bg-accent-green text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded text-xs font-mono font-medium bg-text-primary hover:bg-accent-green text-canvas hover:text-white transition-colors"
             >
               <span>Hubungi Gary</span>
               <ArrowRight className="w-3.5 h-3.5" />

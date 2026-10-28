@@ -40,7 +40,7 @@ export function ContactFooter() {
               href={RESUME_DATA.contact.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded text-xs font-mono font-medium bg-text-primary hover:bg-accent-green text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded text-xs font-mono font-medium bg-text-primary hover:bg-accent-green text-canvas hover:text-white transition-colors"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>WhatsApp Gary</span>

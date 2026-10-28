@@ -3,41 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --bg-canvas: #EAEDEC;
-  --bg-surface: #F1F4F2;
-  --border-grid: #D3D9D4;
-  --border-grid-dark: #B8C2BA;
-  --text-primary: #161511;
-  --text-muted: #5A635C;
-  --accent-green: #3D7D3F;
-  --accent-green-hover: #326633;
-  --badge-bg: #FEF8CA;
-  --badge-dot: #F2C756;
+  --bg-canvas: 234 237 236; /* #EAEDEC */
+  --bg-surface: 241 244 242; /* #F1F4F2 */
+  --bg-surface-hover: 229 235 231; /* #E5EBE7 */
+  --border-grid: 211 217 212; /* #D3D9D4 */
+  --border-grid-dark: 184 194 186; /* #B8C2BA */
+  --text-primary: 22 21 17; /* #161511 */
+  --text-muted: 90 99 92; /* #5A635C */
+  --accent-green: 61 125 63; /* #3D7D3F */
+  --accent-green-hover: 50 102 51; /* #326633 */
+  --badge-bg: 254 248 202; /* #FEF8CA */
+  --badge-dot: 242 199 86; /* #F2C756 */
+}
+
+.dark {
+  --bg-canvas: 14 17 15; /* #0E110F - deep technical obsidian */
+  --bg-surface: 22 27 24; /* #161B18 - elevated surface */
+  --bg-surface-hover: 30 37 33; /* #1E2521 */
+  --border-grid: 38 46 41; /* #262E29 - quiet technical grid hairline */
+  --border-grid-dark: 52 64 57; /* #344039 */
+  --text-primary: 235 240 236; /* #EBF0EC - clean high-contrast off-white */
+  --text-muted: 142 156 146; /* #8E9C92 - refined readable sage-gray */
+  --accent-green: 74 163 78; /* #4AA34E - vibrant emerald */
+  --accent-green-hover: 90 184 94; /* #5AB85E */
+  --badge-bg: 40 35 15; /* #28230F */
+  --badge-dot: 242 199 86; /* #F2C756 */
 }
 
 /* Base Body Styles */
 body {
-  background-color: var(--bg-canvas);
-  color: var(--text-primary);
+  background-color: rgb(var(--bg-canvas));
+  color: rgb(var(--text-primary));
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Custom Selection */
 ::selection {
-  background-color: #3D7D3F;
+  background-color: rgb(var(--accent-green));
   color: #FFFFFF;
 }
 
 /* Subtle Technical Hairline Utility */
 .hairline-border {
-  border-color: var(--border-grid);
+  border-color: rgb(var(--border-grid));
 }
 
 .hairline-border-dark {
-  border-color: var(--border-grid-dark);
+  border-color: rgb(var(--border-grid-dark));
 }
 
 /* Smooth Scrolling */
@@ -52,14 +68,14 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #EAEDEC;
+  background: rgb(var(--bg-canvas));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D3D9D4;
+  background: rgb(var(--border-grid));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8C2BA;
+  background: rgb(var(--border-grid-dark));
 }
