@@ -67,35 +67,35 @@ export function Navbar() {
             <a
               href="#about"
               onClick={(e) => handleNavClick(e, "#about")}
-              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+              className="text-text-primary hover:text-accent-green transition-colors cursor-pointer"
             >
               about/
             </a>
             <a
               href="#experience"
               onClick={(e) => handleNavClick(e, "#experience")}
-              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+              className="text-text-primary hover:text-accent-green transition-colors cursor-pointer"
             >
               experience/
             </a>
             <a
               href="#projects"
               onClick={(e) => handleNavClick(e, "#projects")}
-              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+              className="text-text-primary hover:text-accent-green transition-colors cursor-pointer"
             >
               projects/
             </a>
             <a
               href="#skills"
               onClick={(e) => handleNavClick(e, "#skills")}
-              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+              className="text-text-primary hover:text-accent-green transition-colors cursor-pointer"
             >
               skills/
             </a>
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="text-accent-green font-semibold hover:underline transition-all cursor-pointer"
+              className="text-text-primary hover:text-accent-green font-semibold transition-colors cursor-pointer"
             >
               contact/
             </a>
@@ -107,7 +107,7 @@ export function Navbar() {
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
               download="CV_Gary_Hardyansyah.pdf"
-              className="inline-flex items-center gap-1.5 px-3.5 h-8 rounded text-xs font-mono font-medium bg-surface hover:bg-surface-hover text-text-primary border border-grid-border transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 h-8 rounded text-xs font-mono font-medium bg-surface hover:bg-surface-hover text-text-primary hover:text-accent-green border border-grid-border transition-colors"
             >
               <Download className="w-3.5 h-3.5 text-accent-green" />
               <span>Resume</span>
@@ -134,35 +134,35 @@ export function Navbar() {
           <a
             href="#about"
             onClick={(e) => handleNavClick(e, "#about")}
-            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
+            className="block py-1 text-text-primary hover:text-accent-green transition-colors cursor-pointer"
           >
             about/
           </a>
           <a
             href="#experience"
             onClick={(e) => handleNavClick(e, "#experience")}
-            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
+            className="block py-1 text-text-primary hover:text-accent-green transition-colors cursor-pointer"
           >
             experience/
           </a>
           <a
             href="#projects"
             onClick={(e) => handleNavClick(e, "#projects")}
-            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
+            className="block py-1 text-text-primary hover:text-accent-green transition-colors cursor-pointer"
           >
             projects/
           </a>
           <a
             href="#skills"
             onClick={(e) => handleNavClick(e, "#skills")}
-            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
+            className="block py-1 text-text-primary hover:text-accent-green transition-colors cursor-pointer"
           >
             skills/
           </a>
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="block py-1 text-accent-green font-semibold cursor-pointer"
+            className="block py-1 text-text-primary hover:text-accent-green font-semibold transition-colors cursor-pointer"
           >
             contact/
           </a>
@@ -170,7 +170,7 @@ export function Navbar() {
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
               download="CV_Gary_Hardyansyah.pdf"
-              className="inline-flex items-center gap-1.5 py-1 text-text-primary"
+              className="inline-flex items-center gap-1.5 py-1 text-text-primary hover:text-accent-green transition-colors"
             >
               <Download className="w-3.5 h-3.5 text-accent-green" />
               <span>Download Resume (.pdf)</span>
