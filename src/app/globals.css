@@ -56,9 +56,9 @@ body {
   border-color: rgb(var(--border-grid-dark));
 }
 
-/* Smooth Scrolling */
+/* Smooth Scrolling handled via custom slowSmoothScrollTo */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Custom Scrollbar */

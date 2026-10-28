@@ -44,7 +44,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
   if (!mounted) {
     return (
       <div
-        className={`w-7 h-7 sm:w-8 sm:h-8 rounded border border-grid-border bg-surface ${className}`}
+        className={`w-8 h-8 rounded border border-grid-border bg-surface ${className}`}
         aria-hidden="true"
       />
     );
@@ -54,14 +54,14 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
     <button
       onClick={toggleTheme}
       type="button"
-      className={`inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded text-xs font-mono bg-surface hover:bg-surface-hover text-text-primary border border-grid-border transition-colors ${className}`}
+      className={`inline-flex items-center justify-center w-8 h-8 rounded text-xs font-mono bg-surface hover:bg-surface-hover text-text-primary border border-grid-border transition-colors ${className}`}
       aria-label={isDark ? "Ganti ke mode terang" : "Ganti ke mode gelap"}
       title={isDark ? "Mode Terang (Light Mode)" : "Mode Gelap (Dark Mode)"}
     >
       {isDark ? (
-        <Sun className="w-3.5 h-3.5 text-accent-green animate-in fade-in zoom-in duration-200" />
+        <Sun className="w-3.5 h-3.5 text-accent-green transition-transform hover:rotate-45" />
       ) : (
-        <Moon className="w-3.5 h-3.5 text-text-muted animate-in fade-in zoom-in duration-200" />
+        <Moon className="w-3.5 h-3.5 text-text-muted transition-transform hover:-rotate-12" />
       )}
     </button>
   );

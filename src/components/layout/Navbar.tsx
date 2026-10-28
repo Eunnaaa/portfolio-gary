@@ -1,76 +1,125 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { RESUME_DATA } from "@/data/resume-data";
 import { Download, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { slowSmoothScrollTo } from "@/lib/smooth-scroll";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Global interceptor for in-page anchors to provide luxurious slow smooth scroll
+  useEffect(() => {
+    const handleGlobalAnchorClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest("a");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          slowSmoothScrollTo(href, 900, 56);
+          setMobileMenuOpen(false);
+          window.history.pushState(null, "", href);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleGlobalAnchorClick);
+    return () => document.removeEventListener("click", handleGlobalAnchorClick);
+  }, []);
+
+  const handleBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    slowSmoothScrollTo("#about", 900, 56);
+    setMobileMenuOpen(false);
+    window.history.pushState(null, "", "/");
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    slowSmoothScrollTo(targetId, 900, 56);
+    setMobileMenuOpen(false);
+    window.history.pushState(null, "", targetId);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-canvas/95 backdrop-blur-sm border-b border-grid-border">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
-          <Link
+          {/* Brand Logo / Top Anchor */}
+          <a
             href="/"
-            className="text-sm font-mono font-medium text-text-primary hover:text-accent-green transition-colors"
+            onClick={handleBrandClick}
+            className="text-sm font-mono font-medium text-text-primary hover:text-accent-green transition-colors cursor-pointer"
           >
             <span className="text-accent-green font-bold mr-1.5">/</span>
             <span>Gary Hardyansyah</span>
-          </Link>
+          </a>
 
+          {/* Desktop Nav Links with Slow Smooth Scroll */}
           <nav className="hidden md:flex items-center gap-7 text-xs font-mono">
-            <Link
+            <a
               href="#about"
-              className="text-text-muted hover:text-text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "#about")}
+              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
             >
               about/
-            </Link>
-            <Link
+            </a>
+            <a
               href="#experience"
-              className="text-text-muted hover:text-text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "#experience")}
+              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
             >
               experience/
-            </Link>
-            <Link
+            </a>
+            <a
               href="#projects"
-              className="text-text-muted hover:text-text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "#projects")}
+              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
             >
               projects/
-            </Link>
-            <Link
+            </a>
+            <a
               href="#skills"
-              className="text-text-muted hover:text-text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "#skills")}
+              className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
             >
               skills/
-            </Link>
-            <Link
+            </a>
+            <a
               href="#contact"
-              className="text-accent-green font-semibold hover:underline transition-all"
+              onClick={(e) => handleNavClick(e, "#contact")}
+              className="text-accent-green font-semibold hover:underline transition-all cursor-pointer"
             >
               contact/
-            </Link>
+            </a>
           </nav>
 
-          <div className="hidden md:flex items-center gap-2.5">
-            <ThemeToggle />
+          {/* Desktop Action: Theme Toggle DI SAMPING KIRI TOMBOL RESUME */}
+          <div className="hidden md:flex items-center gap-2">
+            <ThemeToggle className="h-8 w-8" />
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
               download="CV_Gary_Hardyansyah.pdf"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs font-mono bg-surface hover:bg-surface-hover text-text-primary border border-grid-border transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 h-8 rounded text-xs font-mono font-medium bg-surface hover:bg-surface-hover text-text-primary border border-grid-border transition-colors"
             >
               <Download className="w-3.5 h-3.5 text-accent-green" />
               <span>Resume</span>
             </a>
           </div>
 
+          {/* Mobile Actions */}
           <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
+            <ThemeToggle className="h-8 w-8" />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded text-text-muted hover:text-text-primary border border-grid-border bg-surface"
+              className="h-8 w-8 inline-flex items-center justify-center rounded text-text-muted hover:text-text-primary border border-grid-border bg-surface transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -79,43 +128,44 @@ export function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-grid-border bg-canvas px-6 py-4 space-y-3 font-mono text-xs">
-          <Link
+          <a
             href="#about"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-text-muted hover:text-text-primary"
+            onClick={(e) => handleNavClick(e, "#about")}
+            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
           >
             about/
-          </Link>
-          <Link
+          </a>
+          <a
             href="#experience"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-text-muted hover:text-text-primary"
+            onClick={(e) => handleNavClick(e, "#experience")}
+            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
           >
             experience/
-          </Link>
-          <Link
+          </a>
+          <a
             href="#projects"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-text-muted hover:text-text-primary"
+            onClick={(e) => handleNavClick(e, "#projects")}
+            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
           >
             projects/
-          </Link>
-          <Link
+          </a>
+          <a
             href="#skills"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-text-muted hover:text-text-primary"
+            onClick={(e) => handleNavClick(e, "#skills")}
+            className="block py-1 text-text-muted hover:text-text-primary cursor-pointer"
           >
             skills/
-          </Link>
-          <Link
+          </a>
+          <a
             href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-1 text-accent-green font-semibold"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className="block py-1 text-accent-green font-semibold cursor-pointer"
           >
             contact/
-          </Link>
+          </a>
           <div className="pt-2 border-t border-grid-border">
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
