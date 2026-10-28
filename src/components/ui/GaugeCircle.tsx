@@ -9,8 +9,6 @@ interface GaugeCircleProps {
   label: string;
   sublabel?: string;
   progressPercent: number; // 0 to 100
-  size?: number;
-  strokeWidth?: number;
 }
 
 export function GaugeCircle({
@@ -19,25 +17,21 @@ export function GaugeCircle({
   label,
   sublabel,
   progressPercent = 75,
-  size = 168,
-  strokeWidth = 7,
 }: GaugeCircleProps) {
+  // Use a normalized 100x100 viewBox so SVG scales responsively via CSS
+  const size = 100;
+  const strokeWidth = 4.5;
   const radius = (size - strokeWidth * 2) / 2;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (progressPercent / 100) * circumference;
 
   return (
-    <div className="flex flex-col items-center text-center p-4 w-full max-w-[260px] mx-auto">
-      {/* Circle Container */}
-      <div
-        className="relative flex items-center justify-center rounded-full bg-surface transition-transform duration-300 hover:scale-105 shadow-sm"
-        style={{ width: size, height: size }}
-      >
+    <div className="flex flex-col items-center text-center p-2 sm:p-4 w-full">
+      {/* Responsive Scalable Circle Container */}
+      <div className="relative flex items-center justify-center rounded-full bg-surface transition-transform duration-300 hover:scale-105 shadow-sm w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40">
         <svg
-          width={size}
-          height={size}
           viewBox={`0 0 ${size} ${size}`}
-          className="rotate-[-90deg] transform"
+          className="w-full h-full rotate-[-90deg] transform"
         >
           {/* Subtle Background Track */}
           <circle
@@ -64,24 +58,24 @@ export function GaugeCircle({
           />
         </svg>
 
-        {/* Centered Structured Value (Hero Number + Clean Unit) */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none">
-          <span className="text-3xl sm:text-4xl font-extrabold font-sans tracking-tight text-accent-green leading-none">
+        {/* Centered Structured Value */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none p-1">
+          <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-sans tracking-tight text-accent-green leading-none">
             {number}
           </span>
-          <span className="text-xs sm:text-sm font-mono font-bold tracking-wider text-text-primary uppercase mt-1.5">
+          <span className="text-[9px] sm:text-[11px] md:text-xs lg:text-sm font-mono font-bold tracking-wider text-text-primary uppercase mt-1">
             {unit}
           </span>
         </div>
       </div>
 
-      {/* Text Labels below */}
-      <div className="mt-4 min-h-[60px] flex flex-col justify-start">
-        <h4 className="text-sm sm:text-base font-semibold text-text-primary tracking-tight">
+      {/* Responsive Text Labels */}
+      <div className="mt-2.5 sm:mt-4 min-h-[44px] sm:min-h-[56px] flex flex-col justify-start max-w-[130px] sm:max-w-[180px] md:max-w-[220px]">
+        <h4 className="text-xs sm:text-sm md:text-base font-semibold text-text-primary tracking-tight leading-snug">
           {label}
         </h4>
         {sublabel && (
-          <p className="text-xs text-text-muted font-mono mt-1 leading-relaxed max-w-[200px] mx-auto">
+          <p className="text-[10px] sm:text-xs text-text-muted font-mono mt-0.5 leading-relaxed hidden sm:block">
             {sublabel}
           </p>
         )}

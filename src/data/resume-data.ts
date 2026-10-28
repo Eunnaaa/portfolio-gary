@@ -3,7 +3,7 @@ export interface MetricItem {
   unit: string;
   label: string;
   sublabel: string;
-  progressPercent: number; // For SVG gauge arc
+  progressPercent: number;
 }
 
 export interface ExperienceItem {

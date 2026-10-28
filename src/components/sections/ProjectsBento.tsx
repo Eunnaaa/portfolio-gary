@@ -6,41 +6,41 @@ export function ProjectsBento() {
   return (
     <section id="projects" className="border-b border-grid-border">
       {/* Section Header */}
-      <div className="px-8 sm:px-12 py-5 border-b border-grid-border flex items-center justify-between">
-        <h2 className="text-sm font-mono font-bold text-text-primary uppercase tracking-wider">
+      <div className="px-6 sm:px-10 py-4 sm:py-5 border-b border-grid-border flex items-center justify-between">
+        <h2 className="text-xs sm:text-sm font-mono font-bold text-text-primary uppercase tracking-wider">
           selected-projects/
         </h2>
-        <span className="text-xs font-mono text-text-muted">
+        <span className="text-[11px] sm:text-xs font-mono text-text-muted">
           engineering & architecture
         </span>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid-border">
+      {/* Grid: 1 col on mobile/tablet, 3 cols on desktop */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-grid-border">
         {RESUME_DATA.projects.map((project) => (
           <div
             key={project.id}
-            className="p-8 sm:p-10 flex flex-col justify-between hover:bg-surface/20 transition-colors"
+            className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between hover:bg-surface/20 transition-colors"
           >
             <div>
               {/* Category */}
-              <div className="text-xs font-mono text-accent-green font-medium mb-3">
+              <div className="text-xs font-mono text-accent-green font-medium mb-2.5">
                 {project.category}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-text-primary tracking-tight mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-text-primary tracking-tight mb-2.5">
                 {project.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-text-muted leading-relaxed font-sans mb-6">
+              <p className="text-xs sm:text-sm text-text-muted leading-relaxed font-sans mb-5 sm:mb-6">
                 {project.description}
               </p>
             </div>
 
             {/* Footer: Simple Tech & Link */}
-            <div className="pt-6 border-t border-grid-border space-y-3">
+            <div className="pt-5 border-t border-grid-border space-y-3">
               <div className="text-xs font-mono text-text-muted leading-relaxed">
                 <span className="text-text-primary font-medium">Stack: </span>
                 {project.tags.join(" • ")}
