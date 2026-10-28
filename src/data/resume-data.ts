@@ -210,6 +210,11 @@ export const RESUME_DATA = {
       statusType: "live",
       image: "/projects/eventku.png",
       imageType: "portrait",
+      gallery: [
+        "/projects/eventku2.png",
+        "/projects/eventku.png",
+        "/projects/eventku3.png",
+      ],
       description:
         "Aplikasi pemesanan dan manajemen event berbasis Flutter dan Google Firebase yang memungkinkan pengguna menemukan berbagai seminar edukasi, memesan tiket instan ber-QR code, serta mengawasi data kehadiran peserta secara real-time.",
       architecturePoints: [
