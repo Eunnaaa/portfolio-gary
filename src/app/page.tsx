@@ -11,11 +11,11 @@ import { ContactFooter } from "@/components/sections/ContactFooter";
 export default function Home() {
   return (
     <div className="min-h-screen bg-canvas text-text-primary flex flex-col">
-      {/* Top Sticky Navigation */}
+      {/* Top Navbar */}
       <Navbar />
 
-      {/* Main Framed Blueprint Grid Container */}
-      <main className="flex-1 w-full max-w-7xl mx-auto border-x border-grid-border shadow-sm">
+      {/* Main Editorial Container */}
+      <main className="flex-1 w-full max-w-6xl mx-auto border-x border-grid-border">
         <HeroSection />
         <MetricGauges />
         <ExperienceLog />
