@@ -14,7 +14,7 @@ export function ContactFooter() {
   };
 
   return (
-    <footer id="contact" className="bg-canvas">
+    <section id="contact" className="bg-canvas">
       {/* Section Header */}
       <div className="px-6 sm:px-10 py-4 sm:py-5 border-b border-grid-border flex items-center justify-between">
         <h2 className="text-xs sm:text-sm font-mono font-bold text-text-primary uppercase tracking-wider">
@@ -26,7 +26,7 @@ export function ContactFooter() {
       </div>
 
       {/* 2-Column Grid (Mirrors section#about 7:5 ratio exactly) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[400px] border-b border-grid-border">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[400px]">
         {/* Left Column: 7 cols on lg */}
         <div className="lg:col-span-7 p-6 sm:p-10 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-grid-border">
           {/* Top Metadata */}
@@ -141,16 +141,6 @@ export function ContactFooter() {
           </div>
         </div>
       </div>
-
-      {/* Footer Bottom Line */}
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-[11px] sm:text-xs font-mono text-text-muted">
-        <div>
-          © {new Date().getFullYear()} Gary Hardyansyah
-        </div>
-        <div>
-          Next.js 14 • Neo-Technical Editorial
-        </div>
-      </div>
-    </footer>
+    </section>
   );
 }
