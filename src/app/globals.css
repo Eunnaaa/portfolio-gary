@@ -10,8 +10,8 @@
   --border-grid-dark: 184 194 186; /* #B8C2BA */
   --text-primary: 22 21 17; /* #161511 */
   --text-muted: 90 99 92; /* #5A635C */
-  --accent-green: 61 125 63; /* #3D7D3F */
-  --accent-green-hover: 50 102 51; /* #326633 */
+  --accent-green: 53 115 56; /* #357338 - tuned for WCAG AA 4.87:1 contrast */
+  --accent-green-hover: 43 95 45;
   --badge-bg: 254 248 202; /* #FEF8CA */
   --badge-dot: 242 199 86; /* #F2C756 */
 }
@@ -45,6 +45,12 @@ body {
 ::selection {
   background-color: rgb(var(--accent-green));
   color: #FFFFFF;
+}
+
+/* Accessible Keyboard Focus Visible (WCAG 2.1 AA) */
+:focus-visible {
+  outline: 2px solid rgb(var(--accent-green));
+  outline-offset: 2px;
 }
 
 /* Subtle Technical Hairline Utility */

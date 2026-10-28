@@ -63,7 +63,7 @@ export function Navbar() {
           </a>
 
           {/* Desktop Nav Links with Slow Smooth Scroll */}
-          <nav className="hidden md:flex items-center gap-7 text-xs font-mono">
+          <nav aria-label="Navigasi Utama" className="hidden md:flex items-center gap-7 text-xs font-mono">
             <a
               href="#about"
               onClick={(e) => handleNavClick(e, "#about")}

@@ -91,6 +91,7 @@ export function ContactFooter() {
                 <button
                   onClick={handleCopyEmail}
                   className="p-1 rounded text-text-muted hover:text-text-primary transition-colors shrink-0"
+                  aria-label={copied ? "Email disalin ke clipboard" : "Salin alamat email"}
                   title="Copy email"
                 >
                   {copied ? (

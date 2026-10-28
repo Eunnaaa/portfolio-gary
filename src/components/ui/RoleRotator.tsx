@@ -45,12 +45,18 @@ export function RoleRotator() {
   }, [charIndex, isDeleting, isPaused, roleIndex]);
 
   return (
-    <p className="mt-2 sm:mt-3 text-base sm:text-lg font-mono text-text-muted flex items-center min-h-[1.75rem]">
+    <p
+      aria-label={`junior software ${ROLES[roleIndex]}`}
+      className="mt-2 sm:mt-3 text-base sm:text-lg font-mono text-text-muted flex items-center min-h-[1.75rem]"
+    >
       <span>junior software&nbsp;</span>
       <span className="text-accent-green font-semibold">
         {ROLES[roleIndex].substring(0, charIndex)}
       </span>
-      <span className="inline-block text-accent-green font-bold animate-pulse ml-0.5 select-none">
+      <span
+        aria-hidden="true"
+        className="inline-block text-accent-green font-bold animate-pulse ml-0.5 select-none"
+      >
         _
       </span>
     </p>
