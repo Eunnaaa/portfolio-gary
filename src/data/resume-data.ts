@@ -210,11 +210,6 @@ export const RESUME_DATA = {
       statusType: "live",
       image: "/projects/eventku.png",
       imageType: "portrait",
-      gallery: [
-        "/projects/uangku2.png",
-        "/projects/eventku.png",
-        "/projects/uangku3.png",
-      ],
       description:
         "Aplikasi pemesanan dan manajemen event berbasis Flutter dan Google Firebase yang memungkinkan pengguna menemukan berbagai seminar edukasi, memesan tiket instan ber-QR code, serta mengawasi data kehadiran peserta secara real-time.",
       architecturePoints: [
@@ -235,6 +230,11 @@ export const RESUME_DATA = {
       statusType: "live",
       image: "/projects/uang-ku.png",
       imageType: "portrait",
+      gallery: [
+        "/projects/uangku2.png",
+        "/projects/uang-ku.png",
+        "/projects/uangku3.png",
+      ],
       description:
         "Aplikasi pencatatan keuangan personal iOS mewah dan elegan untuk mencatat pengeluaran, pemasukan, transfer saldo, serta pemantauan anggaran harian secara cepat dan aman dengan kapabilitas sinkronisasi data luring yang andal.",
       architecturePoints: [
