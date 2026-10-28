@@ -27,7 +27,7 @@ export function ContactFooter() {
           {/* Main Title & Description */}
           <div className="my-6 sm:my-10 lg:my-12">
             <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-text-primary">
-              get-in-touch<span className="text-accent-green">/</span>
+              get-in-touch
             </h2>
             <p className="mt-3 text-sm sm:text-base text-text-muted leading-relaxed font-sans max-w-lg">
               Terbuka untuk peluang magang, posisi Junior Software Engineer, dan pengerjaan proyek sistem web.
