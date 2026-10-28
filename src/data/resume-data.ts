@@ -67,24 +67,24 @@ export const RESUME_DATA = {
 
   metrics: [
     {
-      number: "3+",
+      number: "4+",
       unit: "Years",
       label: "Code Foundation",
-      sublabel: "Sejak SMK RPL (2021) hingga S1",
+      sublabel: "Pengalaman Sejak SMK hingga sekarang",
       progressPercent: 75,
     },
     {
       number: "7+",
       unit: "Stacks",
       label: "Frameworks & Libraries",
-      sublabel: "Laravel, React, Next, Flask, etc.",
+      sublabel:  "React, Laravel, Next, Springboot, etc.",
       progressPercent: 88,
     },
     {
-      number: "100+",
-      unit: "Siswa",
-      label: "Bimbingan & Mentorship",
-      sublabel: "Praktik Kejuruan Siswa RPL",
+      number: "10+",
+      unit: "Projects",
+      label: "Work",
+      sublabel: "Handling project beginner level",
       progressPercent: 92,
     },
   ] as MetricItem[],

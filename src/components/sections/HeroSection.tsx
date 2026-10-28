@@ -1,6 +1,7 @@
 import React from "react";
 import { RESUME_DATA } from "@/data/resume-data";
 import { Download, ArrowRight } from "lucide-react";
+import { RoleRotator } from "@/components/ui/RoleRotator";
 
 export function HeroSection() {
   return (
@@ -18,9 +19,7 @@ export function HeroSection() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-text-primary">
               hi-<span className="text-accent-green">{RESUME_DATA.shortGreeting}</span>
             </h1>
-            <p className="mt-2 sm:mt-3 text-base sm:text-lg font-mono text-text-muted">
-              junior-software-engineer<span className="text-accent-green">/</span>
-            </p>
+            <RoleRotator />
           </div>
 
           {/* Clean Primary Actions */}
