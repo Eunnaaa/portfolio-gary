@@ -14,21 +14,64 @@ const monoFont = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://garyhardyansyah.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Gary Hardyansyah — Junior Fullstack Developer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Gary Hardyansyah — Junior Software Engineer",
+    template: "%s | Gary Hardyansyah",
+  },
   description:
-    "Personal portfolio of Gary Hardyansyah, Junior Fullstack Developer & Informatics Student with RPL vocational foundation. Building resilient web & server-side systems with Next.js, Laravel, and modern cloud stacks.",
+    "Portfolio of Gary Hardyansyah, Junior Software Engineer & Informatics Student. Building resilient backend systems, RESTful APIs, and modern web applications with Next.js, Golang, and Laravel.",
   keywords: [
     "Gary Hardyansyah",
+    "Junior Software Engineer",
     "Fullstack Developer",
+    "Backend Developer",
     "Next.js",
     "Laravel",
+    "Golang",
     "React",
-    "Portfolio Developer",
+    "TypeScript",
     "Universitas Nusa Mandiri",
     "SMKS Bhinneka Nusantara",
+    "Bekasi",
+    "Indonesia",
   ],
-  authors: [{ name: "Gary Hardyansyah" }],
+  authors: [{ name: "Gary Hardyansyah", url: siteUrl }],
+  creator: "Gary Hardyansyah",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: siteUrl,
+    title: "Gary Hardyansyah — Junior Software Engineer",
+    description:
+      "Portfolio of Gary Hardyansyah, Junior Software Engineer & Informatics Student. Building resilient backend systems, RESTful APIs, and modern web applications.",
+    siteName: "Gary Hardyansyah Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gary Hardyansyah — Junior Software Engineer",
+    description:
+      "Portfolio of Gary Hardyansyah, Junior Software Engineer & Informatics Student. Building resilient backend systems, RESTful APIs, and modern web applications.",
+    creator: "@garyhrdynsyh",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {
@@ -37,6 +80,62 @@ export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#EAEDEC" },
     { media: "(prefers-color-scheme: dark)", color: "#0E110F" },
+  ],
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Gary Hardyansyah",
+      url: siteUrl,
+      jobTitle: "Junior Software Engineer",
+      description:
+        "Mahasiswa Informatika semester 5 di Universitas Nusa Mandiri dengan fondasi Rekayasa Perangkat Lunak (RPL). Berfokus membangun sistem backend yang andal dan aplikasi web modern.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bekasi",
+        addressCountry: "ID",
+      },
+      alumniOf: [
+        {
+          "@type": "EducationalOrganization",
+          name: "Universitas Nusa Mandiri",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "SMKS Bhinneka Nusantara",
+        },
+      ],
+      sameAs: [
+        "https://github.com/Eunnaaa",
+        "https://www.linkedin.com/in/garyhardyansyah/",
+        "https://www.instagram.com/garyhrdynsyh/",
+      ],
+      knowsAbout: [
+        "Software Engineering",
+        "Backend Architecture",
+        "RESTful API",
+        "Next.js",
+        "React",
+        "Laravel",
+        "Golang",
+        "TypeScript",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Gary Hardyansyah Portfolio",
+      description: "Personal portfolio of Gary Hardyansyah, Junior Software Engineer.",
+      publisher: {
+        "@id": `${siteUrl}/#person`,
+      },
+      inLanguage: "id-ID",
+    },
   ],
 };
 
@@ -52,6 +151,10 @@ export default function RootLayout({
       className={`${sansFont.variable} ${monoFont.variable}`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
