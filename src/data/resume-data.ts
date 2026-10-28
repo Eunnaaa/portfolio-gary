@@ -189,7 +189,7 @@ export const RESUME_DATA = {
         "Type-safe API contract antara client dan backend endpoint.",
         "Sistem desain modular Bento Grid dengan Tailwind CSS.",
       ],
-      tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Spring Boot", "Laravel"],
+      tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Spring Boot", "Laravel", "Go" ],
       links: [
         { label: "source/", href: "#", type: "github" },
         { label: "demo/", href: "#", type: "live" },
@@ -201,7 +201,7 @@ export const RESUME_DATA = {
     {
       category: "Programming Languages",
       skills: [
-        { name: "JavaScript (ES6+)", level: "Advanced" },
+        { name: "JavaScript", level: "Advanced" },
         { name: "PHP", level: "Proficient" },
         { name: "Python", level: "Intermediate" },
         { name: "Java", level: "Intermediate" },

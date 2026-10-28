@@ -2,7 +2,6 @@
 
 import React from "react";
 import { RESUME_DATA } from "@/data/resume-data";
-import { Badge } from "@/components/ui/Badge";
 import { ArrowUpRight, Download, MessageSquare } from "lucide-react";
 
 export function ContactFooter() {
@@ -13,14 +12,9 @@ export function ContactFooter() {
         {/* Left Column */}
         <div className="lg:col-span-6 p-8 sm:p-12 lg:p-16 flex flex-col justify-between">
           <div>
-            {/* Top metadata & status badge */}
-            <div className="flex items-center justify-between gap-3 mb-8">
-              <span className="text-xs font-mono text-text-muted">
-                {RESUME_DATA.location}
-              </span>
-              <Badge variant="yellow" dot>
-                Available for work
-              </Badge>
+            {/* Top metadata */}
+            <div className="text-xs font-mono text-text-muted mb-8">
+              {RESUME_DATA.location}
             </div>
 
             {/* Big Headline with trailing slash */}
