@@ -107,7 +107,7 @@ export const RESUME_DATA = {
       period: "Feb 2025 – Jul 2026",
       badge: "Mentorship",
       description:
-        "Memimpin pembelajaran mata pelajaran Informatika dan memfasilitasi laboratorium praktik kejuruan untuk siswa kelas 11 Rekayasa Perangkat Lunak.",
+        "Memimpin pembelajaran mata pelajaran Informatika dan memfasilitasi laboratorium praktik kejuruan untuk siswa kelas 11 & 12 Rekayasa Perangkat Lunak.",
       highlights: [
         "Menyampaikan materi fundamental web development, logika algoritma, dan pemrograman terstruktur.",
         "Membimbing siswa dalam penugasan proyek coding nyata di laboratorium komputer.",
