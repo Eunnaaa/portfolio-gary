@@ -130,6 +130,7 @@ export function Navbar() {
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
               download="CV_Gary_Hardyansyah.pdf"
+              aria-label="Unduh CV resume Gary Hardyansyah dalam format PDF"
               className="inline-flex items-center gap-1.5 px-3.5 h-8 rounded text-xs font-mono font-medium bg-surface hover:bg-surface-hover text-text-primary hover:text-accent-green border border-grid-border transition-colors"
             >
               <Download className="w-3.5 h-3.5 text-accent-green" />
@@ -143,7 +144,8 @@ export function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="h-8 w-8 inline-flex items-center justify-center rounded text-text-muted hover:text-text-primary border border-grid-border bg-surface transition-colors"
-              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -153,7 +155,10 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-grid-border bg-canvas px-6 py-4 space-y-3 font-mono text-xs">
+        <nav
+          aria-label="Navigasi Menu Mobile"
+          className="md:hidden border-t border-grid-border bg-canvas px-6 py-4 space-y-3 font-mono text-xs"
+        >
           <a
             href={isHome ? "#about" : "/#about"}
             onClick={(e) => handleNavClick(e, "#about")}
@@ -193,13 +198,14 @@ export function Navbar() {
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
               download="CV_Gary_Hardyansyah.pdf"
+              aria-label="Unduh CV resume Gary Hardyansyah dalam format PDF"
               className="inline-flex items-center gap-1.5 py-1 text-text-primary hover:text-accent-green transition-colors"
             >
               <Download className="w-3.5 h-3.5 text-accent-green" />
               <span>Download Resume (.pdf)</span>
             </a>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

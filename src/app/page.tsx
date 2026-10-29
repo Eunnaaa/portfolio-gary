@@ -16,7 +16,10 @@ export default function Home() {
       <Navbar />
 
       {/* Main Editorial Container (border-x) */}
-      <main className="flex-1 w-full max-w-6xl mx-auto border-x border-grid-border">
+      <main
+        id="main-content"
+        className="flex-1 w-full max-w-6xl mx-auto border-x border-grid-border"
+      >
         <HeroSection />
         <MetricGauges />
         <ExperienceLog />

@@ -157,15 +157,15 @@ export const RESUME_DATA = {
       image: "/projects/kedai-ku.png",
       imageType: "landscape",
       tagline:
-        "Platform Point of Sale modern untuk bisnis ritel & F&B dengan arsitektur multi-tenant, transaksi kasir instan, dan inventaris terintegrasi.",
+        "Platform Point of Sale modern untuk bisnis ritel & F&B dengan arsitektur multi-tenant, alur kasir kilat, offline queue PWA, dan inventaris terintegrasi.",
       role: "Fullstack Developer & System Architect",
       timeline: "2024 - 2025",
       description:
-        "Platform Point of Sale multi-tenant modern yang dirancang untuk mengelola seluruh transaksi kasir, manajemen inventaris, operasional dapur, CRM loyalitas, dan pembukuan keuangan bisnis ritel serta F&B secara offline maupun online.",
+        "Platform Point of Sale multi-tenant modern yang dirancang untuk mengelola transaksi kasir, manajemen inventaris, operasional dapur (KDS), CRM loyalitas, dan pembukuan keuangan bisnis ritel serta F&B secara offline maupun online.",
       problemStatement:
-        "Banyak pelaku usaha ritel dan F&B terbebani oleh sistem POS konvensional yang kaku, lisensi per-outlet yang mahal, antrean kasir lambat saat jam sibuk, serta minimnya isolasi data saat mengelola banyak cabang secara bersamaan.",
+        "Banyak pelaku usaha ritel dan F&B terbebani oleh sistem POS konvensional yang kaku, lisensi per-outlet mahal, antrean kasir lambat saat jam sibuk, serta minimnya isolasi data saat mengelola banyak cabang secara bersamaan.",
       solution:
-        "Kedai-Ku dibangun dengan arsitektur modern Next.js 15, Drizzle ORM, dan PostgreSQL Supabase. Menggunakan isolasi multi-tenant yang aman berbasis Better Auth, alur kasir berkecepatan tinggi dengan pintasan keyboard, manajemen dapur (KDS) real-time, dan pemotongan stok bahan baku otomatis.",
+        "Kedai-Ku dibangun dengan arsitektur modern Next.js 15, React 19, Drizzle ORM, dan PostgreSQL Supabase. Menggunakan isolasi multi-tenant aman berbasis Better Auth, alur kasir kilat dengan pintasan keyboard, manajemen dapur (KDS) real-time, sinkronisasi offline queue PWA, dan pemotongan stok bahan baku otomatis.",
       features: [
         {
           title: "Multi-Tenant Data Isolation",
@@ -184,8 +184,8 @@ export const RESUME_DATA = {
           description: "Pelacakan stok bahan baku yang berkurang secara otomatis dan akurat setiap kali menu makanan/minuman terjual.",
         },
         {
-          title: "Customer CRM & Loyalty Points",
-          description: "Pencatatan riwayat transaksi pelanggan setia serta akumulasi poin rewards untuk mendongkrak retensi belanja.",
+          title: "PWA Offline Queue Synchronization",
+          description: "Dukungan antrean transaksi luring (offline queue) yang memastikan kasir tetap beroperasi saat koneksi terputus.",
         },
         {
           title: "Financial Analytics & Close Register",
@@ -193,13 +193,15 @@ export const RESUME_DATA = {
         },
       ],
       architecturePoints: [
-        "Arsitektur modern Next.js 15 App Router, React 19, TypeScript, dan antarmuka shadcn UI",
+        "Arsitektur modern Next.js 15 App Router, React 19, TypeScript, dan antarmuka interaktif Tailwind CSS",
         "Type-safe data layer dengan Drizzle ORM dan PostgreSQL Supabase terindeks tinggi",
         "Sistem otentikasi multi-tenant terisolasi berbasis Better Auth dengan proteksi peran berlapis",
-        "Desain antarmuka responsif dan aksesibel sesuai standar WCAG AA dengan Tailwind CSS",
+        "Dukungan Progressive Web App (PWA) dengan antrean mutasi offline saat jaringan putus",
+        "Jaminan stabilitas rilis melalui pengujian otomatis Unit Tests dan Playwright End-to-End (E2E)",
       ],
-      tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Drizzle ORM", "Supabase", "Better Auth", "shadcn UI"],
+      tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Drizzle ORM", "Supabase", "Better Auth", "Playwright E2E"],
       links: [
+        { label: "github-repo/", href: "https://github.com/Eunnaaa/pos-app", type: "github" },
         { label: "project-details/", href: "/projects/kedai-ku", type: "docs" },
       ],
     },
@@ -212,31 +214,31 @@ export const RESUME_DATA = {
       image: "/projects/padelhub.png",
       imageType: "landscape",
       tagline:
-        "Platform reservasi lapangan padel digital yang memadukan pengalaman booking pemain real-time dengan tata kelola venue olahraga terpadu.",
+        "Platform reservasi lapangan padel digital dengan pencegahan double-booking via concurrency lock dan integrasi payment gateway Midtrans.",
       role: "Fullstack Developer",
       timeline: "2024",
       description:
-        "Platform reservasi lapangan padel digital yang memfasilitasi para pengguna untuk mencari serta memesan jadwal bermain secara langsung dan mempermudah pihak pengelola venue mengurus operasional bisnis harian.",
+        "Platform reservasi lapangan padel modern yang memfasilitasi pengguna untuk memesan jadwal bermain secara instan dan memudahkan pengelola venue mengurus operasional, invoice, dan rekapitulasi bisnis harian.",
       problemStatement:
-        "Ledakan tren olahraga padel menyebabkan pengelola venue kewalahan menerima pemesanan via chat manual. Jadwal sering tumpang tindih (double-booking), pembayaran sulit terlacak, dan pendataan sewa alat olahraga berantakan.",
+        "Tingginya minat olahraga padel sering membuat pengelola venue kewalahan menghadapi pemesanan manual. Jadwal kerap tumpang tindih (double-booking), pembayaran sulit terlacak, dan pendataan sewa alat olahraga berantakan.",
       solution:
-        "PadelHub menyatukan arsitektur monolitik Laravel dengan interaktivitas Vue via Inertia.js. Sistem menghadirkan grid pemilihan lapangan real-time dengan kunci jadwal transaksional (concurrency lock), invoice digital otomatis, dan integrasi kasir sewa raket.",
+        "PadelHub dibangun dengan Laravel (^13.x / PHP 8.3) dan antarmuka interaktif Vue 3 via Inertia.js. Menghadirkan kontrol konkurensi transaksional (DB::transaction & lockForUpdate) untuk mengeliminasi risiko bentrok jadwal, pembayaran online via Midtrans, serta pengujian otomatis Pest PHP.",
       features: [
         {
-          title: "Interactive Slot Grid Booking",
-          description: "Pemilihan slot waktu dan lapangan secara visual dengan pencegahan bentrok jadwal pemesanan secara otomatis.",
+          title: "Pessimistic Concurrency Lock Booking",
+          description: "Pemilihan slot waktu dan lapangan dengan proteksi database lock (lockForUpdate) untuk mencegah double-booking pada detik yang sama.",
         },
         {
           title: "Multi-Court Venue Management",
           description: "Pengaturan jadwal operasional, penyesuaian tarif dinamis (peak hours vs reguler), serta jadwal perawatan lapangan berkala.",
         },
         {
-          title: "Digital Invoicing & Check-in Pass",
-          description: "Penerbitan kode reservasi dan invoice digital yang siap diverifikasi di resepsionis lapangan dalam hitungan detik.",
+          title: "Midtrans Payment & Digital Pass",
+          description: "Integrasi payment gateway Midtrans PHP SDK untuk pembayaran instan dan penerbitan check-in pass digital otomatis.",
         },
         {
-          title: "Community Matchmaking",
-          description: "Fasilitas mempertemukan pemain untuk bermain bersama berdasarkan tingkat keahlian (skill level) dan preferensi jam main.",
+          title: "Comprehensive Pest Testing Suite",
+          description: "Rangkaian tes otomatis dengan Pest PHP yang memverifikasi validitas booking, otentikasi, dan alur pembayaran.",
         },
         {
           title: "Equipment Rental & F&B Add-ons",
@@ -248,13 +250,14 @@ export const RESUME_DATA = {
         },
       ],
       architecturePoints: [
-        "Integrasi monolitik modern Laravel 11 dengan antarmuka interaktif Vue 3 via Inertia.js",
-        "Sistem kontrol konkurensi PostgreSQL untuk memastikan tidak terjadi reservasi ganda pada slot yang sama",
-        "Penataan antarmuka responsif Tailwind CSS dengan tata letak adaptif mobile dan desktop",
-        "Arsitektur database relasional PostgreSQL yang dinormalisasi untuk kecepatan pencarian jadwal",
+        "Integrasi monolitik modern Laravel (^13.x / PHP 8.3) dengan antarmuka interaktif Vue 3 via Inertia.js",
+        "Sistem kontrol konkurensi PostgreSQL menggunakan DB::transaction dan lockForUpdate() untuk mencegah bentrok reservasi",
+        "Suite pengujian otomatis berbasis Pest PHP (pestphp/pest & pest-plugin-laravel)",
+        "Integrasi payment gateway Midtrans PHP SDK untuk verifikasi transaksi instan",
       ],
-      tags: ["Laravel", "Vue.js", "Inertia.js", "Tailwind CSS", "PostgreSQL", "RESTful API"],
+      tags: ["Laravel", "Vue.js", "Inertia.js", "PostgreSQL", "Pest PHP", "Midtrans", "Tailwind CSS"],
       links: [
+        { label: "github-repo/", href: "https://github.com/Eunnaaa/Padel-HUB", type: "github" },
         { label: "project-details/", href: "/projects/padelhub", type: "docs" },
       ],
     },
@@ -267,7 +270,7 @@ export const RESUME_DATA = {
       image: "/projects/sibank-sampah.png",
       imageType: "landscape",
       tagline:
-        "Platform web operasional lingkungan rukun warga untuk tata kelola setoran timbangan sampah, saldo mandiri warga, dan transparansi daur ulang.",
+        "Platform web operasional lingkungan warga untuk tata kelola setoran timbangan sampah, saldo mandiri, transparansi daur ulang, dan In-Memory Demo mode.",
       role: "Fullstack Engineer",
       timeline: "2024",
       description:
@@ -275,7 +278,7 @@ export const RESUME_DATA = {
       problemStatement:
         "Pencatatan bank sampah di lingkungan warga sebelumnya dilakukan secara manual menggunakan buku kas fisik, memicu lambatnya pembaruan saldo tabungan warga, risiko salah hitung timbangan petugas, serta susahnya menyusun laporan audit RW.",
       solution:
-        "Si Bank Sampah dibangun menggunakan tumpukan teknologi modern TanStack Start, React, dan TypeScript berbasis Vite. Memfasilitasi input setoran lapangan kilat dengan kalkulasi nilai rupiah otomatis sesuai katalog komoditas terkini, serta portal cek saldo mandiri warga yang transparan.",
+        "Si Bank Sampah dibangun menggunakan tumpukan teknologi modern TanStack Start, React 19, dan TypeScript berbasis Vite. Memfasilitasi input setoran lapangan kilat dengan kalkulasi nilai rupiah otomatis, portal cek saldo mandiri warga yang transparan, serta fitur In-Memory Demo mode yang siap diuji tanpa setup database.",
       features: [
         {
           title: "Field Weighing Fast Entry",
@@ -294,8 +297,8 @@ export const RESUME_DATA = {
           description: "Kalkulasi matematis bobot timbangan ke konversi rupiah secara real-time tanpa celah kesalahan kalkulator manual.",
         },
         {
-          title: "Monthly Environmental Audit Report",
-          description: "Rekapitulasi berkala volume tonase sampah yang berhasil didaur ulang serta laporan buku kas umum untuk pengurus RW.",
+          title: "In-Memory Demo Environment",
+          description: "Mode demo in-memory bawaan untuk mengeksplorasi seluruh alur operasional dan transaksi tanpa perlu koneksi database lokal.",
         },
         {
           title: "Role-Based Administrative Access",
@@ -305,20 +308,21 @@ export const RESUME_DATA = {
       architecturePoints: [
         "Tumpukan teknologi modern TanStack Start, React 19, dan TypeScript bertenaga Vite",
         "Type-safe database layer dengan Drizzle ORM untuk query data setoran dan saldo warga secara instan",
-        "Penyimpanan cloud terintegrasi dengan PostgreSQL Supabase yang andal dan aman",
-        "Optimistic UI updates untuk pengalaman pencatatan data timbangan yang responsif tanpa lag",
+        "Penyimpanan terintegrasi dengan PostgreSQL Supabase dan dukungan fallback In-Memory Store",
+        "Otomatisasi pengujian komprehensif menggunakan Playwright E2E dan Node test runner bawaan",
       ],
-      tags: ["TanStack Start", "React", "TypeScript", "Drizzle ORM", "Vite", "Supabase", "Tailwind CSS"],
+      tags: ["TanStack Start", "React 19", "TypeScript", "Drizzle ORM", "Vite", "Supabase", "Playwright E2E"],
       links: [
+        { label: "github-repo/", href: "https://github.com/Eunnaaa/bank-sampah", type: "github" },
         { label: "project-details/", href: "/projects/bank-sampah", type: "docs" },
       ],
     },
     {
       id: "eventku",
-      title: "EventKu (Event Booking & QR Ticket)",
-      category: "Mobile App & Event Ticketing",
-      status: "Production Ready",
-      statusType: "live",
+      title: "EventKu (Event Booking App)",
+      category: "Mobile App (Flutter) / Academic Project",
+      status: "Coursework / Prototype",
+      statusType: "internal",
       image: "/projects/eventku.png",
       imageType: "portrait",
       gallery: [
@@ -327,49 +331,50 @@ export const RESUME_DATA = {
         "/projects/eventku3.png",
       ],
       tagline:
-        "Aplikasi mobile pemesanan tiket seminar edukasi dan workshop berbasis Flutter dengan tiket digital ber-QR code dan pemindai kehadiran instan.",
-      role: "Mobile Application Engineer",
+        "Aplikasi mobile pemesanan tiket seminar edukasi dan workshop berbasis Flutter dengan autentikasi Firebase dan sinkronisasi Cloud Firestore.",
+      role: "Mobile Application Developer",
       timeline: "2024",
       description:
-        "Aplikasi pemesanan dan manajemen event berbasis Flutter dan Google Firebase yang memungkinkan pengguna menemukan berbagai seminar edukasi, memesan tiket instan ber-QR code, serta mengawasi data kehadiran peserta secara real-time.",
+        "Aplikasi pemesanan tiket acara yang dikembangkan sebagai proyek mata kuliah Mobile Programming menggunakan Flutter dan Google Firebase. Memungkinkan pengguna menjelajahi kegiatan seminar, memesan tiket, dan mengelola reservasi.",
       problemStatement:
-        "Panitia seminar sering menghadapi antrean panjang di pintu masuk karena verifikasi tiket kertas manual yang lambat dan rentan duplikasi, sementara peserta membutuhkan tempat terpusat untuk menyimpan tiket digital tanpa khawatir hilang.",
+        "Publikasi kegiatan kampus dan registrasi peserta sering kali tersebar di berbagai formulir daring terpisah, menyulitkan peserta melihat rekapitulasi acara dan menyimpan bukti tiket dalam satu tempat terpadu.",
       solution:
-        "EventKu dibangun menggunakan Flutter lintas platform dengan backend Firebase. Mengintegrasikan generator QR Code tiket unik anti-duplikasi di aplikasi pengguna dan pemindai kamera real-time bagi panitia yang dapat memvalidasi kehadiran dalam tempo di bawah satu detik.",
+        "EventKu dibangun menggunakan framework Flutter lintas platform dengan integrasi Firebase Authentication dan Cloud Firestore. Menyediakan sistem login peserta, penjelajahan katalog kegiatan edukatif, alur pemesanan tiket, dan layar manajemen event.",
       features: [
         {
           title: "Curated Event Discovery",
-          description: "Penjelajahan seminar teknologi, bisnis, dan edukasi dengan filter tanggal, kategori topik, dan status ketersediaan kursi.",
+          description: "Penjelajahan seminar teknologi, bisnis, dan edukasi dengan filter tanggal, kategori topik, dan ketersediaan kuota.",
         },
         {
-          title: "Instant Encrypted QR Ticket",
-          description: "Penerbitan tiket digital langsung ke ponsel dengan barcode/QR code berenkripsi unik untuk keamanan tiket maksimal.",
+          title: "Firebase Authentication",
+          description: "Registrasi dan autentikasi akun peserta secara aman melalui Firebase Auth dengan penyimpanan sesi terpersistensi.",
         },
         {
-          title: "High-Speed Camera Scanner",
-          description: "Pemindai tiket kamera berkecepatan tinggi bagi panitia acara di pintu masuk untuk validasi check-in instan.",
+          title: "Digital Ticket Pass & History",
+          description: "Penerbitan kartu tiket digital dalam aplikasi dengan detail nama acara, tanggal, kuota, dan status pemesanan.",
         },
         {
-          title: "Live Attendance Dashboard",
-          description: "Pemantauan kuota kursi tersisa dan jumlah peserta yang telah hadir di lokasi secara real-time bagi administrator.",
+          title: "Cloud Firestore Real-Time Sync",
+          description: "Penyimpanan data katalog acara dan pesanan tiket peserta yang tersinkronisasi langsung ke database Firestore.",
         },
         {
-          title: "Saved Events & Notification Reminders",
-          description: "Fitur simpan daftar seminar favorit serta notifikasi pengingat jadwal otomatis sebelum event diselenggarakan.",
+          title: "Reactive State Management with Provider",
+          description: "Pengelolaan state antarmuka, daftar tiket, dan profil pengguna menggunakan library Provider yang modular.",
         },
         {
-          title: "Digital Receipt & Order History",
-          description: "Arsip riwayat pemesanan tiket yang rapi dan dapat diakses kembali kapan saja bahkan saat offline.",
+          title: "Admin Event Management Interface",
+          description: "Antarmuka bagi admin untuk membuat kegiatan baru, memperbarui informasi event, dan memantau partisipasi peserta.",
         },
       ],
       architecturePoints: [
-        "Aplikasi mobile lintas platform dibangun menggunakan Flutter dan bahasa pemrograman Dart",
-        "Backend real-time serverless bertenaga Google Firebase (Firestore, Authentication, dan Cloud Functions)",
-        "Sistem validasi tiket instan ber-QR code dengan enkripsi payload anti-duplikasi tiket",
-        "Arsitektur antarmuka responsif 60fps dengan transisi halus dan pengalaman pengguna mobile yang modern",
+        "Aplikasi mobile lintas platform dibangun menggunakan framework Flutter dan bahasa pemrograman Dart",
+        "Backend real-time serverless berbasis Google Firebase (Cloud Firestore & Firebase Authentication)",
+        "Manajemen state aplikasi reaktif menggunakan Provider dan penyimpanan preferensi lokal SharedPreferences",
+        "Desain antarmuka responsif mobile dengan tab navigasi terstruktur dan transisi layar yang bersih",
       ],
-      tags: ["Flutter", "Dart", "Google Firebase", "QR Code Scanner", "Mobile Development", "Cross-Platform"],
+      tags: ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "Provider", "Mobile Development"],
       links: [
+        { label: "github-repo/", href: "https://github.com/Eunnaaa/eventku", type: "github" },
         { label: "project-details/", href: "/projects/eventku", type: "docs" },
       ],
     },
@@ -387,7 +392,7 @@ export const RESUME_DATA = {
         "/projects/uangku3.png",
       ],
       tagline:
-        "Aplikasi pencatatan keuangan personal iOS mewah dan elegan dengan arsitektur offline-first, sinkronisasi cloud kilat, dan analitik anggaran komprehensif.",
+        "Aplikasi pencatatan keuangan personal iOS mewah dengan arsitektur offline-first SQLite lokal, sinkronisasi cloud kilat, dan analitik anggaran.",
       role: "Mobile Engineer & Backend Architect",
       timeline: "2024 - 2025",
       description:
@@ -426,10 +431,11 @@ export const RESUME_DATA = {
         "Aplikasi klien mobile dibangun dengan React Native, Expo Framework, dan SQLite lokal terenkripsi",
         "Backend performa tinggi dengan runtime Bun, mikro-framework ElysiaJS, PostgreSQL, dan Drizzle ORM",
         "Mekanisme sinkronisasi data luring (offline-first sync queue) yang tahan konflik dan cepat",
-        "Type-safety menyeluruh dari skema basis data lokal, API backend, hingga state antarmuka mobile",
+        "Struktur Turborepo monorepo modular yang memisahkan aplikasi mobile (apps/mobile) dan API server (apps/api)",
       ],
-      tags: ["React Native", "Expo", "SQLite Lokal", "TypeScript", "Bun", "ElysiaJS", "Drizzle ORM", "iOS Development"],
+      tags: ["React Native", "Expo", "SQLite Lokal", "TypeScript", "Bun", "ElysiaJS", "Turborepo", "iOS Development"],
       links: [
+        { label: "github-repo/", href: "https://github.com/Eunnaaa/uang-ku", type: "github" },
         { label: "project-details/", href: "/projects/uang-ku", type: "docs" },
       ],
     },
@@ -439,10 +445,10 @@ export const RESUME_DATA = {
     {
       category: "Programming Languages",
       skills: [
+        { name: "TypeScript", level: "Advanced" },
         { name: "JavaScript", level: "Advanced" },
-        { name: "Golang", level: "Advanced" },
-        { name: "Dart", level: "Advance" },
         { name: "PHP", level: "Proficient" },
+        { name: "Dart", level: "Proficient" },
         { name: "Python", level: "Intermediate" },
         { name: "Java", level: "Intermediate" },
         { name: "HTML5 & CSS3", level: "Advanced" },

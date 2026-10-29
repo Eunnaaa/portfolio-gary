@@ -3,7 +3,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://garyhardyansyah.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.garyhardyansyah.xyz";
 
   const projectRoutes: MetadataRoute.Sitemap = RESUME_DATA.projects.map(
     (project) => ({

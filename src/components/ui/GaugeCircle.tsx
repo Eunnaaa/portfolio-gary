@@ -26,12 +26,20 @@ export function GaugeCircle({
   const strokeDashoffset = circumference - (progressPercent / 100) * circumference;
 
   return (
-    <div className="flex flex-col items-center text-center p-2 sm:p-4 w-full">
+    <div
+      role="progressbar"
+      aria-valuenow={progressPercent}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={`${number} ${unit} - ${label}${sublabel ? ` (${sublabel})` : ""}`}
+      className="flex flex-col items-center text-center p-2 sm:p-4 w-full"
+    >
       {/* Responsive Scalable Circle Container */}
       <div className="relative flex items-center justify-center rounded-full bg-surface transition-transform duration-300 hover:scale-105 shadow-sm w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40">
         <svg
           viewBox={`0 0 ${size} ${size}`}
           className="w-full h-full rotate-[-90deg] transform"
+          aria-hidden="true"
         >
           {/* Subtle Background Track */}
           <circle

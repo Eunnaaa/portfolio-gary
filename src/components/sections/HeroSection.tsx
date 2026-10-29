@@ -26,6 +26,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a
               href="#contact"
+              aria-label="Navigasi ke bagian kontak untuk menghubungi Gary"
               className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded text-xs font-mono font-medium bg-text-primary hover:bg-accent-green text-canvas hover:text-white transition-colors"
             >
               <span>Hubungi Gary</span>
@@ -35,6 +36,7 @@ export function HeroSection() {
             <a
               href={RESUME_DATA.contact.cvDownloadUrl}
               download="CV_Gary_Hardyansyah.pdf"
+              aria-label="Unduh berkas CV Gary Hardyansyah dalam format PDF"
               className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 rounded text-xs font-mono font-medium bg-surface hover:bg-surface-hover text-text-primary border border-grid-border transition-colors"
             >
               <Download className="w-3.5 h-3.5 text-accent-green" />

@@ -31,7 +31,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   }
 
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://garyhardyansyah.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.garyhardyansyah.xyz";
 
   return {
     title: `${project.title} — Gary Hardyansyah`,
@@ -83,7 +83,10 @@ export default function ProjectDetailPage({ params }: PageProps) {
       <Navbar />
 
       {/* Main Editorial Container */}
-      <main className="flex-1 w-full max-w-6xl mx-auto border-x border-grid-border">
+      <main
+        id="main-content"
+        className="flex-1 w-full max-w-6xl mx-auto border-x border-grid-border"
+      >
         {/* 1. Header Navigation & Quick Meta */}
         <div className="px-6 sm:px-10 py-4 sm:py-5 border-b border-grid-border flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
           <Link
@@ -136,6 +139,29 @@ export default function ProjectDetailPage({ params }: PageProps) {
                 : "Web SaaS / Platform"}
             </div>
           </div>
+
+          {/* Action Links (GitHub Repository & Demo) */}
+          {project.links && project.links.length > 0 && (
+            <div className="flex flex-wrap items-center gap-3 pt-5 mt-5 border-t border-grid-border">
+              {project.links.map((link, lIdx) => (
+                <a
+                  key={lIdx}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs font-mono font-medium bg-surface hover:bg-surface-hover text-text-primary border border-grid-border hover:border-accent-green transition-colors"
+                  aria-label={
+                    link.type === "github"
+                      ? `Buka repositori GitHub untuk ${project.title}`
+                      : `Lihat ${link.label} untuk ${project.title}`
+                  }
+                >
+                  <span>{link.label}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
+                </a>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* 3. Hero Visual Preview with Prominently Rounded Corners */}
@@ -270,18 +296,32 @@ export default function ProjectDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Quick Discussion Link */}
-            <div className="pt-6 mt-6 border-t border-grid-border flex items-center justify-between text-xs font-mono">
+            {/* Quick Discussion & Code Links */}
+            <div className="pt-6 mt-6 border-t border-grid-border flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
               <span className="text-text-muted">
-                Ingin mendiskusikan project ini?
+                Ingin mendiskusikan atau mengeksplorasi kode project ini?
               </span>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center gap-1 font-semibold text-text-primary hover:text-accent-green transition-colors cursor-pointer"
-              >
-                <span>contact-gary/</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
-              </Link>
+              <div className="flex items-center gap-4">
+                {project.links?.find((l) => l.type === "github") && (
+                  <a
+                    href={project.links.find((l) => l.type === "github")!.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-semibold text-text-muted hover:text-accent-green transition-colors cursor-pointer"
+                    aria-label={`Buka repositori GitHub untuk ${project.title}`}
+                  >
+                    <span>view-source/</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
+                  </a>
+                )}
+                <Link
+                  href="/#contact"
+                  className="inline-flex items-center gap-1 font-semibold text-text-primary hover:text-accent-green transition-colors cursor-pointer"
+                >
+                  <span>contact-gary/</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

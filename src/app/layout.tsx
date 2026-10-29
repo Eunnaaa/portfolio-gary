@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import "./globals.css";
 
 const sansFont = Inter({
@@ -15,7 +16,7 @@ const monoFont = JetBrains_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://garyhardyansyah.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.garyhardyansyah.xyz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Gary Hardyansyah",
   },
   description:
-    "Portfolio of Gary Hardyansyah, Junior Software Engineer & Informatics Student. Building resilient backend systems, RESTful APIs, and modern web applications with Next.js, Golang, and Laravel.",
+    "Portfolio of Gary Hardyansyah, Junior Software Engineer & Informatics Student. Building resilient backend systems, RESTful APIs, and modern web applications with Next.js, TypeScript, and Laravel.",
   keywords: [
     "Gary Hardyansyah",
     "Junior Software Engineer",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
     "Backend Developer",
     "Next.js",
     "Laravel",
-    "Golang",
-    "React",
     "TypeScript",
+    "React",
+    "Flutter",
     "Universitas Nusa Mandiri",
     "SMKS Bhinneka Nusantara",
     "Bekasi",
@@ -121,8 +122,9 @@ const jsonLd = {
         "Next.js",
         "React",
         "Laravel",
-        "Golang",
         "TypeScript",
+        "JavaScript",
+        "PostgreSQL",
       ],
     },
     {
@@ -174,7 +176,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-canvas text-text-primary antialiased font-sans selection:bg-accent-green selection:text-white">
-        {children}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-text-primary focus:text-canvas focus:rounded focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-accent-green text-xs font-mono font-medium"
+        >
+          Lompat ke konten utama
+        </a>
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

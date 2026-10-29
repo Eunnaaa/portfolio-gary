@@ -19,11 +19,14 @@ export function ProjectsBento() {
 
       {/* Structured Editorial Rows (Consistent 5:7 Blueprint Ratio) */}
       <div className="divide-y divide-grid-border">
-        {RESUME_DATA.projects.map((project, idx) => (
-          <div
-            key={project.id}
-            className="group grid grid-cols-1 lg:grid-cols-12 p-6 sm:p-8 lg:p-10 gap-6 lg:gap-10 hover:bg-surface/20 transition-colors"
-          >
+        {RESUME_DATA.projects.map((project, idx) => {
+          const githubLink = project.links?.find((l) => l.type === "github");
+
+          return (
+            <div
+              key={project.id}
+              className="group grid grid-cols-1 lg:grid-cols-12 p-6 sm:p-8 lg:p-10 gap-6 lg:gap-10 hover:bg-surface/20 transition-colors"
+            >
             {/* Left Column: Visual Preview (5 cols on lg) */}
             <div className="lg:col-span-5 flex items-center">
               <Link
@@ -137,24 +140,40 @@ export function ProjectsBento() {
                 )}
               </div>
 
-              {/* Bottom Row: Tech Stack & Action Link */}
+              {/* Bottom Row: Tech Stack & Action Links */}
               <div className="pt-4 border-t border-grid-border flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono mt-auto">
                 <div className="text-text-muted">
                   <span className="text-text-primary font-medium">Stack: </span>
                   {project.tags.join(" • ")}
                 </div>
 
-                <Link
-                  href={`/projects/${project.id}`}
-                  className="inline-flex items-center gap-1 font-semibold text-text-primary hover:text-accent-green transition-colors cursor-pointer shrink-0"
-                >
-                  <span>project-details/</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
-                </Link>
+                <div className="flex items-center gap-4 shrink-0">
+                  {githubLink && (
+                    <a
+                      href={githubLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-semibold text-text-muted hover:text-accent-green transition-colors cursor-pointer"
+                      aria-label={`Lihat source code ${project.title} di GitHub`}
+                    >
+                      <span>github/</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
+                    </a>
+                  )}
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="inline-flex items-center gap-1 font-semibold text-text-primary hover:text-accent-green transition-colors cursor-pointer"
+                    aria-label={`Buka spesifikasi lengkap project ${project.title}`}
+                  >
+                    <span>project-details/</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-accent-green" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
